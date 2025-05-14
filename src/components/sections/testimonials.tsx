@@ -19,7 +19,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from "@/hooks/use-toast";
-import { Edit3, Trash2, Star } from 'lucide-react';
+import { Edit3, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 
@@ -31,7 +31,6 @@ const initialTestimonialsData: Testimonial[] = [
     avatarText: 'SL',
     avatarImageUrl: 'https://placehold.co/100x100.png',
     rating: 5,
-    isUserAdded: false, // Initially, these are not user-added for delete demo
   },
   {
     id: '2',
@@ -39,7 +38,6 @@ const initialTestimonialsData: Testimonial[] = [
     name: 'John B.',
     avatarText: 'JB',
     rating: 5,
-    isUserAdded: false,
   },
   {
     id: '3',
@@ -48,7 +46,6 @@ const initialTestimonialsData: Testimonial[] = [
     avatarText: 'EK',
     avatarImageUrl: 'https://placehold.co/100x100.png',
     rating: 4,
-    isUserAdded: false,
   },
 ];
 
@@ -60,7 +57,6 @@ const ReviewForm = ({
   isOpen: boolean;
   onClose: () => void;
   onSubmit: (data: Omit<Testimonial, 'id' | 'avatarText' | 'isUserAdded' | 'avatarImageUrl'>) => void;
-  // initialData prop removed as editing is removed
 }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -70,7 +66,6 @@ const ReviewForm = ({
   const { toast } = useToast();
 
   useEffect(() => {
-    // Reset form when it opens for a new review
     if (isOpen) {
       setName('');
       setEmail('');
@@ -149,61 +144,9 @@ const ReviewForm = ({
   );
 };
 
-// Dialog for confirming deletion
-const ConfirmDeleteDialog = ({
-  isOpen,
-  onClose,
-  onConfirm,
-  testimonialName,
-  testimonialQuote,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  onConfirm: () => void;
-  testimonialName?: string;
-  testimonialQuote?: string;
-}) => {
-  return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-md bg-card">
-        <DialogHeader>
-          <DialogTitle>Confirm Deletion</DialogTitle>
-          <DialogDescription>
-            Are you sure you want to delete this review by "{testimonialName}"? This action cannot be undone.
-          </DialogDescription>
-        </DialogHeader>
-        {testimonialQuote && (
-          <div className="py-4">
-            <p className="text-sm text-muted-foreground">Review:</p>
-            <blockquote className="mt-1 text-sm italic border-l-2 pl-2">"{testimonialQuote}"</blockquote>
-          </div>
-        )}
-        <DialogFooter className="sm:justify-end">
-           <DialogClose asChild>
-             <Button type="button" variant="outline">Cancel</Button>
-           </DialogClose>
-           <Button
-            type="button"
-            variant="destructive"
-            onClick={() => {
-              onConfirm();
-              onClose();
-            }}
-          >
-            <Trash2 className="mr-2 h-4 w-4" /> Delete
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-};
-
-
 export function TestimonialsSection() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>(initialTestimonialsData);
   const [isReviewFormOpen, setIsReviewFormOpen] = useState(false);
-  const [testimonialToManage, setTestimonialToManage] = useState<Testimonial | null>(null);
-  const [isConfirmDeleteDialogOpen, setIsConfirmDeleteDialogOpen] = useState(false);
   const { toast } = useToast();
 
   const sliderSettings = {
@@ -239,30 +182,12 @@ export function TestimonialsSection() {
       id: Date.now().toString(),
       avatarText,
       avatarImageUrl: `https://placehold.co/100x100.png?text=${avatarText}`,
-      isUserAdded: true, // Mark as user-added
+      isUserAdded: true, 
     };
-    setTestimonials(prev => [newReview, ...prev]); // Add to the beginning
+    setTestimonials(prev => [newReview, ...prev]); 
     toast({ title: "Review Submitted!", description: "Thank you for your feedback!" });
   };
   
-  const handleDeleteReview = (testimonialId: string) => {
-    setTestimonials(prev => prev.filter(t => t.id !== testimonialId));
-    toast({ title: "Review Deleted", description: "Your review has been removed.", variant: "default" });
-    setTestimonialToManage(null);
-    setIsConfirmDeleteDialogOpen(false);
-  };
-
-  const openDeleteConfirm = (testimonial: Testimonial) => {
-    if (testimonial.isUserAdded || initialTestimonialsData.find(t => t.id === testimonial.id)) { // Allow deleting initial ones for demo
-      setTestimonialToManage(testimonial);
-      setIsConfirmDeleteDialogOpen(true);
-    } else {
-      // Optionally, inform user they can't delete this one
-      // toast({ title: "Action Not Allowed", description: "This review cannot be deleted.", variant: "destructive" });
-    }
-  };
-
-
   return (
     <section id="testimonials" className="py-16 lg:py-24 bg-background opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
       <Container>
@@ -281,14 +206,6 @@ export function TestimonialsSection() {
               <div key={testimonial.id} className="h-full">
                 <TestimonialCard 
                   {...testimonial} 
-                  onClick={() => {
-                    // Only allow deleting for user-added or if it's an initial one (for demo)
-                    if (testimonial.isUserAdded || initialTestimonialsData.some(t => t.id === testimonial.id)) {
-                       openDeleteConfirm(testimonial);
-                    }
-                  }}
-                  // Pass a flag if the card should be interactive (e.g., show hover effects)
-                  isInteractive={testimonial.isUserAdded || initialTestimonialsData.some(t => t.id === testimonial.id)}
                 />
               </div>
             ))}
@@ -320,17 +237,6 @@ export function TestimonialsSection() {
         onClose={() => setIsReviewFormOpen(false)}
         onSubmit={handleAddReview}
       />
-      
-      {testimonialToManage && (
-         <ConfirmDeleteDialog
-            isOpen={isConfirmDeleteDialogOpen}
-            onClose={() => setIsConfirmDeleteDialogOpen(false)}
-            onConfirm={() => handleDeleteReview(testimonialToManage.id)}
-            testimonialName={testimonialToManage.name}
-            testimonialQuote={testimonialToManage.quote}
-         />
-      )}
-
     </section>
   );
 }

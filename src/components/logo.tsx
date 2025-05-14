@@ -7,8 +7,8 @@ export function Logo() {
       <Image
         src="/logo.png" // Make sure you have logo.png in your /public folder
         alt="RIVE KOORA Logo"
-        width={130} // Adjusted for better display
-        height={50}  // Adjusted for better display
+        width={100} // Adjusted for a more squarish logo
+        height={100} // Adjusted for a more squarish logo
         priority
         className="object-contain" // Ensures the logo fits well
       />

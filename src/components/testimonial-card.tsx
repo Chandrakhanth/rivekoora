@@ -15,9 +15,7 @@ export interface Testimonial {
 }
 
 interface TestimonialCardProps extends Testimonial {
-  onClick?: () => void;
   className?: string;
-  isInteractive?: boolean; // New prop to control interactivity
 }
 
 export function TestimonialCard({ 
@@ -26,31 +24,16 @@ export function TestimonialCard({
   avatarText, 
   avatarImageUrl, 
   rating, 
-  // isUserAdded is part of Testimonial, but isInteractive will control UI
-  onClick,
-  className,
-  isInteractive 
+  className 
 }: TestimonialCardProps) {
-  // Use isInteractive prop to determine if card should be clickable/focusable
-  const canInteract = isInteractive && onClick;
 
   return (
     <Card 
       className={cn(
         "bg-card shadow-lg h-full flex flex-col", 
-        canInteract ? "cursor-pointer hover:shadow-xl transition-shadow" : "",
         className
       )}
-      onClick={canInteract ? onClick : undefined} // Only attach onClick if interactive
-      tabIndex={canInteract ? 0 : -1} 
-      onKeyDown={(e) => {
-        if (canInteract && (e.key === 'Enter' || e.key === ' ')) {
-          onClick?.();
-        }
-      }}
-      role={canInteract ? "button" : undefined}
-      aria-pressed={canInteract ? "false" : undefined} 
-      aria-label={canInteract ? `Manage review by ${name}` : `Testimonial by ${name}`}
+      aria-label={`Testimonial by ${name}`}
     >
       <CardContent className="p-6 flex-grow flex flex-col items-center text-center">
         <Avatar className="w-16 h-16 mb-4 border-2 border-primary">
