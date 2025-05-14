@@ -8,96 +8,97 @@ body {
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* Very Light Blue-Gray */
-    --foreground: 215 25% 25%; /* Dark Slate Blue */
+    /* Warm Naturals with Earthy Green & Gold Accent Palette */
+    --background: 45 50% 98%; /* Very Light Cream */
+    --foreground: 40 10% 25%; /* Dark Brown-Gray */
 
-    --muted: 210 30% 94%; /* Light Grayish Blue */
-    --muted-foreground: 215 20% 45%; /* Slate Blue */
+    --muted: 45 30% 94%; /* Light Beige */
+    --muted-foreground: 40 10% 45%; /* Muted Brown-Gray */
 
-    --popover: 210 40% 99%; /* Almost White */
-    --popover-foreground: 215 25% 25%; /* Dark Slate Blue */
+    --popover: 45 50% 99%; /* Almost White Cream */
+    --popover-foreground: 40 10% 25%; /* Dark Brown-Gray */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 215 25% 25%; /* Dark Slate Blue */
+    --card-foreground: 40 10% 25%; /* Dark Brown-Gray */
 
-    --border: 210 20% 88%; /* Light Gray Blue Border */
-    --input: 210 20% 92%; /* Very Light Gray Blue Input */
+    --border: 45 20% 88%; /* Light Beige Border */
+    --input: 45 30% 92%; /* Very Light Beige Input */
 
-    --primary: 190 60% 45%; /* Modern Teal */
-    --primary-foreground: 210 40% 98%; /* Very Light Blue-Gray for text on primary */
+    --primary: 140 35% 40%; /* Muted Forest Green */
+    --primary-foreground: 45 50% 98%; /* Very Light Cream for text on primary */
 
-    --secondary: 200 50% 65%; /* Soft Sky Blue */
-    --secondary-foreground: 215 25% 25%; /* Dark Slate Blue for text on secondary */
+    --secondary: 130 20% 75%; /* Soft Sage Green */
+    --secondary-foreground: 140 35% 25%; /* Darker Green for text on secondary */
 
-    --accent: 30 90% 60%; /* Vibrant Coral */
-    --accent-foreground: 0 0% 100%; /* White for text on accent */
+    --accent: 35 70% 55%; /* Muted Gold/Ochre */
+    --accent-foreground: 40 50% 98%; /* Light Cream for text on accent */
 
-    --destructive: 0 72% 51%; /* Bright Red */
+    --destructive: 0 72% 51%; /* Bright Red (kept for standard destructive actions) */
     --destructive-foreground: 0 0% 98%; /* Light Gray for text on destructive */
 
-    --ring: 190 60% 55%; /* Slightly Lighter Teal for focus rings */
+    --ring: 140 35% 50%; /* Slightly Lighter Forest Green for focus rings */
     --radius: 0.5rem;
 
-    --chart-1: 190 60% 50%; /* Teal variant */
-    --chart-2: 30 85% 55%;  /* Coral variant */
-    --chart-3: 210 30% 60%; /* Blue-Gray variant */
-    --chart-4: 200 50% 50%; /* Sky Blue variant */
-    --chart-5: 215 20% 50%; /* Slate Blue variant */
+    --chart-1: 140 35% 45%; /* Muted Forest Green variant */
+    --chart-2: 35 65% 50%;  /* Muted Gold/Ochre variant */
+    --chart-3: 45 25% 65%; /* Beige variant */
+    --chart-4: 130 20% 60%; /* Soft Sage Green variant */
+    --chart-5: 40 10% 50%; /* Muted Brown-Gray variant */
     
-    --sidebar-background: 210 35% 96%; 
-    --sidebar-foreground: 215 25% 30%;
-    --sidebar-primary: 190 60% 45%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 30% 90%;
-    --sidebar-accent-foreground: 215 25% 25%;
-    --sidebar-border: 210 20% 85%;
-    --sidebar-ring: 190 60% 55%;
+    --sidebar-background: 45 40% 96%; 
+    --sidebar-foreground: 40 10% 30%;
+    --sidebar-primary: 140 35% 40%;
+    --sidebar-primary-foreground: 45 50% 98%;
+    --sidebar-accent: 45 30% 90%;
+    --sidebar-accent-foreground: 40 10% 25%;
+    --sidebar-border: 45 20% 85%;
+    --sidebar-ring: 140 35% 50%;
   }
 
   .dark {
-    --background: 220 20% 12%; /* Very Dark Blue */
-    --foreground: 210 30% 85%; /* Light Grayish Blue for text */
+    --background: 40 10% 12%; /* Very Dark Brown */
+    --foreground: 45 30% 85%; /* Light Beige for text */
 
-    --muted: 220 15% 20%; /* Dark Blue Muted */
-    --muted-foreground: 210 25% 65%; /* Grayish Blue Muted Text */
+    --muted: 40 8% 20%; /* Dark Brown Muted */
+    --muted-foreground: 45 25% 65%; /* Beige Muted Text */
 
-    --popover: 220 22% 10%; /* Darker Blue Popover */
-    --popover-foreground: 210 30% 85%; /* Light Grayish Blue text */
+    --popover: 40 10% 10%; /* Darker Brown Popover */
+    --popover-foreground: 45 30% 85%; /* Light Beige text */
 
-    --card: 220 18% 15%; /* Dark Blue Card */
-    --card-foreground: 210 30% 85%; /* Light Grayish Blue text */
+    --card: 40 9% 15%; /* Dark Brown Card */
+    --card-foreground: 45 30% 85%; /* Light Beige text */
 
-    --border: 210 15% 30%; /* Dark Blue Border */
-    --input: 210 15% 32%; /* Dark Blue Input */
+    --border: 40 10% 30%; /* Dark Brown Border */
+    --input: 40 10% 32%; /* Dark Brown Input */
 
-    --primary: 190 55% 55%; /* Lighter Modern Teal for dark mode */
-    --primary-foreground: 220 15% 95%; /* Very Light Blue/Almost White for text on primary */
+    --primary: 140 30% 50%; /* Lighter Muted Forest Green for dark mode */
+    --primary-foreground: 40 15% 95%; /* Very Light Brown/Almost White for text on primary */
 
-    --secondary: 200 45% 40%; /* Muted Sky Blue for dark mode */
-    --secondary-foreground: 210 30% 90%; /* Light Grayish Blue for text on secondary */
+    --secondary: 130 18% 40%; /* Muted Sage Green for dark mode */
+    --secondary-foreground: 45 30% 90%; /* Light Beige for text on secondary */
 
-    --accent: 30 80% 65%; /* Brighter Coral for dark mode */
-    --accent-foreground: 20 50% 15%; /* Very Dark Brown for text on accent */
+    --accent: 35 60% 65%; /* Brighter Muted Gold/Ochre for dark mode */
+    --accent-foreground: 35 50% 15%; /* Very Dark Brown for text on accent */
 
     --destructive: 0 60% 45%; /* Darker Red */
     --destructive-foreground: 0 0% 95%; /* Light Gray for text on destructive */
 
-    --ring: 190 55% 60%; /* Brighter Teal for focus rings */
+    --ring: 140 30% 55%; /* Brighter Muted Forest Green for focus rings */
     
-    --chart-1: 190 50% 50%;
-    --chart-2: 30 75% 60%;
-    --chart-3: 210 25% 55%;
-    --chart-4: 200 40% 45%;
-    --chart-5: 215 25% 55%;
+    --chart-1: 140 30% 50%;
+    --chart-2: 35 60% 60%;
+    --chart-3: 45 20% 55%;
+    --chart-4: 130 18% 45%;
+    --chart-5: 40 10% 55%;
 
-    --sidebar-background: 220 20% 10%; 
-    --sidebar-foreground: 210 30% 80%; 
-    --sidebar-primary: 190 55% 55%; 
-    --sidebar-primary-foreground: 220 15% 95%; 
-    --sidebar-accent: 220 15% 22%;
-    --sidebar-accent-foreground: 210 30% 85%;
-    --sidebar-border: 210 15% 25%;
-    --sidebar-ring: 190 55% 60%;
+    --sidebar-background: 40 10% 10%; 
+    --sidebar-foreground: 45 30% 80%; 
+    --sidebar-primary: 140 30% 50%; 
+    --sidebar-primary-foreground: 40 15% 95%; 
+    --sidebar-accent: 40 8% 22%;
+    --sidebar-accent-foreground: 45 30% 85%;
+    --sidebar-border: 40 10% 25%;
+    --sidebar-ring: 140 30% 55%;
   }
 }
 
@@ -108,4 +109,27 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Slick Slider custom arrow styling for AboutUsSection */
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  @apply !bg-primary/50 hover:!bg-primary/70 !h-10 !w-10 !flex !items-center !justify-center !rounded-full z-10;
+}
+.slick-arrow.slick-prev {
+  @apply !left-6; /* Adjusted from 25px */
+}
+.slick-arrow.slick-next {
+  @apply !right-6; /* Adjusted from 25px */
+}
+.slick-arrow svg {
+  @apply h-6 w-6 text-primary-foreground;
+}
+
+/* Testimonials slider specific styling */
+.testimonials-slider .slick-slide {
+  padding: 0 0.75rem; /* Add spacing between slides */
+}
+.testimonials-slider .slick-list {
+  margin: 0 -0.75rem; /* Counteract padding for full width appearance */
 }

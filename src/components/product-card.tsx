@@ -1,42 +1,32 @@
 import Image from 'next/image';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Leaf } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface ProductCardProps {
   name: string;
   description: string;
-  price: string;
   imageUrl: string;
   imageHint?: string;
 }
 
-export function ProductCard({ name, description, price, imageUrl, imageHint = "product" }: ProductCardProps) {
+export function ProductCard({ name, description, imageUrl, imageHint = "product" }: ProductCardProps) {
   return (
-    <Card className="flex flex-col overflow-hidden h-full shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
-      <CardHeader className="p-0">
-        <div className="aspect-w-4 aspect-h-3">
+    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card w-full">
+      <div className="md:flex">
+        <div className="md:w-1/3 lg:w-1/4 xl:w-1/5 md:shrink-0">
           <Image
             src={imageUrl}
             alt={name}
-            width={400}
-            height={300}
-            className="object-cover w-full h-full"
+            width={300}
+            height={300} // Make it square-ish for the side image
+            className="object-cover w-full h-48 md:h-full"
             data-ai-hint={imageHint}
           />
         </div>
-      </CardHeader>
-      <CardContent className="flex-grow p-6">
-        <CardTitle className="text-xl font-semibold text-primary mb-2">{name}</CardTitle>
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{description}</p>
-      </CardContent>
-      <CardFooter className="p-6 pt-0 flex justify-between items-center">
-        <p className="text-lg font-bold text-accent">{price}</p>
-        <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-          <Leaf className="mr-2 h-4 w-4" />
-          View Details
-        </Button>
-      </CardFooter>
+        <div className="p-6 flex flex-col justify-center md:w-2/3 lg:w-3/4 xl:w-4/5">
+          <CardTitle className="text-2xl font-semibold text-primary mb-3">{name}</CardTitle>
+          <p className="text-base text-foreground/80 leading-relaxed">{description}</p>
+        </div>
+      </div>
     </Card>
   );
 }

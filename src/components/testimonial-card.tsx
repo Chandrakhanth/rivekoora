@@ -1,18 +1,54 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
-interface TestimonialCardProps {
+export interface Testimonial {
+  id: string;
   quote: string;
   name: string;
   avatarText: string;
   avatarImageUrl?: string;
   rating: number;
+  isUserAdded?: boolean; // To identify user-added reviews
+  // email and phone are collected but not displayed
 }
 
-export function TestimonialCard({ quote, name, avatarText, avatarImageUrl, rating }: TestimonialCardProps) {
+interface TestimonialCardProps extends Testimonial {
+  onClick?: () => void;
+  className?: string;
+}
+
+export function TestimonialCard({ 
+  quote, 
+  name, 
+  avatarText, 
+  avatarImageUrl, 
+  rating, 
+  isUserAdded,
+  onClick,
+  className 
+}: TestimonialCardProps) {
+  const canInteract = isUserAdded || onClick; // Enable interaction if it's user-added or an onClick handler is provided
+
   return (
-    <Card className="bg-card shadow-lg h-full flex flex-col">
+    <Card 
+      className={cn(
+        "bg-card shadow-lg h-full flex flex-col", 
+        canInteract ? "cursor-pointer hover:shadow-xl transition-shadow" : "",
+        className
+      )}
+      onClick={onClick}
+      tabIndex={canInteract ? 0 : -1} // Make it focusable if clickable
+      onKeyDown={(e) => {
+        if (canInteract && (e.key === 'Enter' || e.key === ' ')) {
+          onClick?.();
+        }
+      }}
+      role={canInteract ? "button" : undefined}
+      aria-pressed={canInteract ? "false" : undefined} // Consider 'true' if a modal opens, depends on exact interaction
+      aria-label={canInteract ? `Edit or delete review by ${name}` : `Testimonial by ${name}`}
+    >
       <CardContent className="p-6 flex-grow flex flex-col items-center text-center">
         <Avatar className="w-16 h-16 mb-4 border-2 border-primary">
           {avatarImageUrl && <AvatarImage src={avatarImageUrl} alt={name} data-ai-hint="person portrait" />}
@@ -26,17 +62,11 @@ export function TestimonialCard({ quote, name, avatarText, avatarImageUrl, ratin
             />
           ))}
         </div>
-        <blockquote className="text-foreground/80 italic leading-relaxed mb-4">
+        <blockquote className="text-foreground/80 italic leading-relaxed mb-4 text-sm">
           "{quote}"
         </blockquote>
-        <p className="font-semibold text-primary mt-auto">{name}</p>
+        <p className="font-semibold text-primary mt-auto text-base">{name}</p>
       </CardContent>
     </Card>
   );
 }
-// Note: mt-auto_REMOVE_THIS_LINE_IF_IT_CAUSES_ISSUES on the name paragraph is to push it to the bottom if card heights vary.
-// It might be better to ensure all cards in a row have the same height via grid styling if this causes problems.
-// For now, simple `mt-auto` will attempt this. It was `mt-auto` before, changed to ensure the build passes.
-// Corrected: it should be within a flex container to work effectively.
-// The structure is: CardContent is flex-grow and flex-col. The name should be last.
-// The parent CardContent is already flex flex-col, so mt-auto on the name should work.
