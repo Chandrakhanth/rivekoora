@@ -13,6 +13,9 @@ export default function HomePage() {
       <main className="flex-grow">
         <HeroSection />
         <FeaturedProductsSection />
+        <div className="container mx-auto py-8 px-4 text-center">
+          <p className="text-lg text-gray-700">Explore our curated selection of high-quality products, handpicked to meet your needs and exceed your expectations.</p>
+        </div>
         <AboutUsSection />
         <TestimonialsSection />
         <ContactSection />

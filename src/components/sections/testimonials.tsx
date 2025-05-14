@@ -1,9 +1,11 @@
 import { Container } from '@/components/container';
 import { TestimonialCard } from '@/components/testimonial-card';
+import { Button } from '@/components/ui/button';
+import { Edit3 } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "AromaOz products have transformed my home into a sanctuary. The scents are so natural and calming. I love the Eucalyptus Breeze oil!",
+    quote: "RIVE KOORA products have transformed my home into a sanctuary. The scents are so natural and calming. I love the Eucalyptus Breeze oil!",
     name: 'Sarah L.',
     avatarText: 'SL',
     avatarImageUrl: 'https://placehold.co/100x100.png',
@@ -38,6 +40,12 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.name} {...testimonial} />
           ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Edit3 className="mr-2 h-5 w-5" />
+            Write a Review
+          </Button>
         </div>
       </Container>
     </section>

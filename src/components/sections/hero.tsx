@@ -1,20 +1,17 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/container';
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative bg-secondary/30 py-20 md:py-32 opacity-0 animate-fade-in-up">
+    <section id="hero" className="relative bg-secondary/30 h-screen flex items-center opacity-0 animate-fade-in-up">
       <div className="absolute inset-0">
-        <Image
-          src="https://placehold.co/1920x1080.png"
-          alt="Natural aroma products background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-20"
-          priority
-          data-ai-hint="nature landscape"
+        <video
+          src="/VDO-1.mp4"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          autoPlay
+          loop
+          muted
         />
          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
       </div>

@@ -124,7 +124,7 @@ export function ContactSection() {
                 <Mail className="h-8 w-8 text-accent mt-1"/>
                 <div>
                     <h4 className="font-semibold text-primary">Email Us</h4>
-                    <a href="mailto:hello@aroma_oz.com.au" className="text-foreground/80 hover:text-primary">hello@aroma_oz.com.au</a>
+                    <a href="mailto:hello@rivekoora.com.au" className="text-foreground/80 hover:text-primary">hello@rivekoora.com.au</a>
                     <p className="text-sm text-muted-foreground">We reply within 24 hours</p>
                 </div>
              </div>
