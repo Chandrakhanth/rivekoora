@@ -1,11 +1,17 @@
-import { Sprout } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export function Logo() {
   return (
     <Link href="/" className="flex items-center">
-      <Sprout className="h-8 w-8 text-primary" />
-      <span className="ml-2 text-xl font-bold text-primary">RIVE KOORA</span>
+      <Image
+        src="/logo.png" // Make sure you have logo.png in your /public folder
+        alt="RIVE KOORA Logo"
+        width={130} // Adjusted for better display
+        height={50}  // Adjusted for better display
+        priority
+        className="object-contain" // Ensures the logo fits well
+      />
     </Link>
   );
 }

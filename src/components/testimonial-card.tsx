@@ -10,13 +10,14 @@ export interface Testimonial {
   avatarText: string;
   avatarImageUrl?: string;
   rating: number;
-  isUserAdded?: boolean; // To identify user-added reviews
+  isUserAdded?: boolean; 
   // email and phone are collected but not displayed
 }
 
 interface TestimonialCardProps extends Testimonial {
   onClick?: () => void;
   className?: string;
+  isInteractive?: boolean; // New prop to control interactivity
 }
 
 export function TestimonialCard({ 
@@ -25,11 +26,13 @@ export function TestimonialCard({
   avatarText, 
   avatarImageUrl, 
   rating, 
-  isUserAdded,
+  // isUserAdded is part of Testimonial, but isInteractive will control UI
   onClick,
-  className 
+  className,
+  isInteractive 
 }: TestimonialCardProps) {
-  const canInteract = isUserAdded || onClick; // Enable interaction if it's user-added or an onClick handler is provided
+  // Use isInteractive prop to determine if card should be clickable/focusable
+  const canInteract = isInteractive && onClick;
 
   return (
     <Card 
@@ -38,16 +41,16 @@ export function TestimonialCard({
         canInteract ? "cursor-pointer hover:shadow-xl transition-shadow" : "",
         className
       )}
-      onClick={onClick}
-      tabIndex={canInteract ? 0 : -1} // Make it focusable if clickable
+      onClick={canInteract ? onClick : undefined} // Only attach onClick if interactive
+      tabIndex={canInteract ? 0 : -1} 
       onKeyDown={(e) => {
         if (canInteract && (e.key === 'Enter' || e.key === ' ')) {
           onClick?.();
         }
       }}
       role={canInteract ? "button" : undefined}
-      aria-pressed={canInteract ? "false" : undefined} // Consider 'true' if a modal opens, depends on exact interaction
-      aria-label={canInteract ? `Edit or delete review by ${name}` : `Testimonial by ${name}`}
+      aria-pressed={canInteract ? "false" : undefined} 
+      aria-label={canInteract ? `Manage review by ${name}` : `Testimonial by ${name}`}
     >
       <CardContent className="p-6 flex-grow flex flex-col items-center text-center">
         <Avatar className="w-16 h-16 mb-4 border-2 border-primary">

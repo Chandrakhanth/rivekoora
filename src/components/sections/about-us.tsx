@@ -3,36 +3,12 @@
 
 import Image from 'next/image';
 import { Container } from '@/components/container';
-import { Leaf, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 import Slider from 'react-slick';
 import type { CSSProperties } from 'react'; 
 import { cn } from '@/lib/utils';
 
-const NextArrow = (props: { className?: string; style?: CSSProperties; onClick?: () => void }) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={cn(className, "slick-arrow slick-next !bg-primary/50 hover:!bg-primary/70 !h-10 !w-10 !flex !items-center !justify-center !rounded-full")}
-      style={{ ...style, display: 'flex', right: '25px', zIndex: 1 }} // Increased right offset for visibility on full-width
-      onClick={onClick}
-    >
-      <ChevronRightIcon className="h-6 w-6 text-primary-foreground" />
-    </div>
-  );
-};
-
-const PrevArrow = (props: { className?: string; style?: CSSProperties; onClick?: () => void }) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={cn(className, "slick-arrow slick-prev !bg-primary/50 hover:!bg-primary/70 !h-10 !w-10 !flex !items-center !justify-center !rounded-full")}
-      style={{ ...style, display: 'flex', left: '25px', zIndex: 1 }} // Increased left offset for visibility on full-width
-      onClick={onClick}
-    >
-      <ChevronLeftIcon className="h-6 w-6 text-primary-foreground" />
-    </div>
-  );
-};
+// Arrow components are no longer needed as arrows will be disabled
 
 const sliderImages = [
   { src: "https://placehold.co/600x400.png", alt: "Serene landscape 1", hint: "landscape" },
@@ -49,16 +25,14 @@ const sliderImages = [
 
 export function AboutUsSection() {
   const sliderSettings = {
-    dots: false, // Removed pagination dots
+    dots: false,
     infinite: true,
-    speed: 1200, 
+    speed: 800, // Increased transition speed (lower is faster)
     autoplay: true,
-    autoplaySpeed: 4000, 
+    autoplaySpeed: 3000, // Faster autoplay cycle
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true, 
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    arrows: false, // Removed arrows
     pauseOnHover: true,
     responsive: [
       {
@@ -82,7 +56,7 @@ export function AboutUsSection() {
     <section id="about" className="py-16 lg:py-24 bg-secondary/10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
       <Container>
         <div className="max-w-3xl mx-auto text-center lg:text-left mb-12">
-          <div> {/* This div used to be: className="order-2 lg:order-1" */}
+          <div>
             <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6">Our Story: Rooted in Nature</h2>
             <div className="space-y-4 text-foreground/90 text-base leading-relaxed">
               <p>
@@ -97,19 +71,17 @@ export function AboutUsSection() {
               </p>
             </div>
           </div>
-          {/* Removed the main 600x450 Image component here */}
         </div>
         
-        <div className="text-center"> {/* Centering the heading */}
+        <div className="text-center">
            <h3 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl mb-8">Glimpses of Our World</h3>
         </div>
       </Container>
       
-      {/* Slider now outside the main container for full-width effect */}
       <div className="mt-8 w-full">
         <Slider {...sliderSettings}>
           {sliderImages.map((image, index) => (
-            <div key={index} className="px-2"> {/* px-2 for spacing between slides */}
+            <div key={index} className="px-2">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src={image.src}
