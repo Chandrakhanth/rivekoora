@@ -5,19 +5,22 @@ import { Container } from '@/components/container';
 export function HeroSection() {
   return (
     <section id="hero" className="relative bg-secondary/30 h-screen flex items-center opacity-0 animate-fade-in-up">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <video
-          src="/VDO-1.mp4"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          src="/images/video.mp4"
+          className="w-full h-full object-cover opacity-20"
           autoPlay
           loop
           muted
+          playsInline
         />
-         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" /> */}
       </div>
-      <Container className="relative z-10 text-center">
+
+      {/* Content */}
+      <Container className="relative z-10 text-center animate-fade-in-up">
         <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
-          Embrace Nature's Essence
+          Embrace Nature&apos;s Essence
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-foreground/90 sm:text-xl">
           Discover the pure, natural aromas of Australia. Handcrafted with love to bring tranquility and balance to your life.

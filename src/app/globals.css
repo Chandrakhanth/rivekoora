@@ -12,8 +12,8 @@ body {
     --background: 45 50% 98%; /* Very Light Cream */
     --foreground: 40 10% 25%; /* Dark Brown-Gray */
 
-    --muted: 45 30% 94%; /* Light Beige */
-    --muted-foreground: 40 10% 45%; /* Muted Brown-Gray */
+    /* --muted: 45 30% 94%; 
+    --muted-foreground: 40 10% 45%;  */
 
     --popover: 45 50% 99%; /* Almost White Cream */
     --popover-foreground: 40 10% 25%; /* Dark Brown-Gray */

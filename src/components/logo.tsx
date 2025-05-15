@@ -5,12 +5,12 @@ export function Logo() {
   return (
     <Link href="/" className="flex items-center">
       <Image
-        src="/logo.png" // Make sure you have logo.png in your /public folder
-        alt="RIVE KOORA Logo"
-        width={100} // Adjusted for a more squarish logo
-        height={100} // Adjusted for a more squarish logo
+        src="/images/logo.png" 
+        alt="Logo"
+        width={100}
+        height={100}
         priority
-        className="object-contain" // Ensures the logo fits well
+        className="object-contain"
       />
     </Link>
   );
