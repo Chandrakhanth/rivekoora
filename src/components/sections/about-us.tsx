@@ -1,14 +1,10 @@
-// @ts-nocheck
 "use client";
 
 import Image from 'next/image';
 import { Container } from '@/components/container';
 import { Leaf } from 'lucide-react';
 import Slider from 'react-slick';
-import type { CSSProperties } from 'react'; 
 import { cn } from '@/lib/utils';
-
-// Arrow components are no longer needed as arrows will be disabled
 
 const sliderImages = [
   { src: "https://placehold.co/600x400.png", alt: "Serene landscape 1", hint: "landscape" },
@@ -27,12 +23,12 @@ export function AboutUsSection() {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 800, // Increased transition speed (lower is faster)
+    speed: 800, 
     autoplay: true,
-    autoplaySpeed: 3000, // Faster autoplay cycle
+    autoplaySpeed: 3000, 
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false, // Removed arrows
+    arrows: false, 
     pauseOnHover: true,
     responsive: [
       {

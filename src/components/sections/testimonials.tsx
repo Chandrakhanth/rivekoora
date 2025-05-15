@@ -1,7 +1,6 @@
-// @ts-nocheck
 "use client";
 
-import React, { useState, useEffect, CSSProperties } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { Container } from '@/components/container';
 import { TestimonialCard, type Testimonial } from '@/components/testimonial-card';

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type useEffect, type EffectCallback } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
