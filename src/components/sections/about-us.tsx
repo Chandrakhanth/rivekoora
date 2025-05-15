@@ -29,7 +29,7 @@ export function AboutUsSection() {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false, 
-    pauseOnHover: true,
+    pauseOnHover: false, // Changed from true to false
     responsive: [
       {
         breakpoint: 1024,
