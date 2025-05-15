@@ -74,7 +74,7 @@ export function AboutUsSection() {
         </div>
       </Container>
       
-      <div className="mt-8 w-full">
+      <div className="mt-8 w-full overflow-x-hidden">
         <Slider {...sliderSettings}>
           {sliderImages.map((image, index) => (
             <div key={index} className="px-2">

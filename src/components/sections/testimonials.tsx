@@ -52,10 +52,12 @@ const ReviewForm = ({
   isOpen,
   onClose,
   onSubmit,
+  initialData,
 }: {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (data: Omit<Testimonial, 'id' | 'avatarText' | 'isUserAdded' | 'avatarImageUrl'>) => void;
+  onSubmit: (data: Omit<Testimonial, 'id' | 'avatarText' | 'isUserAdded' | 'avatarImageUrl'> & { id?: string }) => void;
+  initialData?: Testimonial | null;
 }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -66,13 +68,23 @@ const ReviewForm = ({
 
   useEffect(() => {
     if (isOpen) {
-      setName('');
-      setEmail('');
-      setPhone('');
-      setQuote('');
-      setRating(5);
+      if (initialData) {
+        setName(initialData.name);
+        // Assuming email and phone were collected but not part of initialTestimonialsData
+        // For editing, you'd fetch the full data or have it available
+        setEmail((initialData as any).email || ''); 
+        setPhone((initialData as any).phone || '');
+        setQuote(initialData.quote);
+        setRating(initialData.rating);
+      } else {
+        setName('');
+        setEmail('');
+        setPhone('');
+        setQuote('');
+        setRating(5);
+      }
     }
-  }, [isOpen]);
+  }, [isOpen, initialData]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,6 +93,7 @@ const ReviewForm = ({
       return;
     }
     onSubmit({ 
+      id: initialData?.id,
       name, 
       email, 
       phone, 
@@ -94,9 +107,9 @@ const ReviewForm = ({
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-[425px] bg-card">
         <DialogHeader>
-          <DialogTitle>Write a Review</DialogTitle>
+          <DialogTitle>{initialData ? 'Edit Your Review' : 'Write a Review'}</DialogTitle>
           <DialogDescription>
-            Share your experience with our products. We'd love to hear from you!
+            {initialData ? 'Update your experience with our products.' : "Share your experience with our products. We'd love to hear from you!"}
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
@@ -135,7 +148,7 @@ const ReviewForm = ({
             <DialogClose asChild>
               <Button type="button" variant="outline">Cancel</Button>
             </DialogClose>
-            <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground">Submit Review</Button>
+            <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground">{initialData ? 'Update Review' : 'Submit Review'}</Button>
           </DialogFooter>
         </form>
       </DialogContent>
@@ -143,9 +156,11 @@ const ReviewForm = ({
   );
 };
 
+
 export function TestimonialsSection() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>(initialTestimonialsData);
   const [isReviewFormOpen, setIsReviewFormOpen] = useState(false);
+  const [editingReview, setEditingReview] = useState<Testimonial | null>(null);
   const { toast } = useToast();
 
   const sliderSettings = {
@@ -174,17 +189,33 @@ export function TestimonialsSection() {
     ]
   };
 
-  const handleAddReview = (data: Omit<Testimonial, 'id' | 'avatarText' | 'isUserAdded' | 'avatarImageUrl'>) => {
+  const handleReviewSubmit = (data: Omit<Testimonial, 'avatarText' | 'isUserAdded' | 'avatarImageUrl'> & { id?: string }) => {
     const avatarText = data.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
-    const newReview: Testimonial = {
-      ...data,
-      id: Date.now().toString(),
-      avatarText,
-      avatarImageUrl: `https://placehold.co/100x100.png?text=${avatarText}`,
-      isUserAdded: true, 
-    };
-    setTestimonials(prev => [newReview, ...prev]); 
-    toast({ title: "Review Submitted!", description: "Thank you for your feedback!" });
+    
+    if (data.id) { // Editing existing review
+      setTestimonials(prev => prev.map(t => t.id === data.id ? { ...t, ...data, avatarText } : t));
+      toast({ title: "Review Updated!", description: "Your feedback has been updated." });
+    } else { // Adding new review
+      const newReview: Testimonial = {
+        ...data,
+        id: Date.now().toString(),
+        avatarText,
+        avatarImageUrl: `https://placehold.co/100x100.png?text=${avatarText}`,
+        isUserAdded: true, 
+      };
+      setTestimonials(prev => [newReview, ...prev]); 
+      toast({ title: "Review Submitted!", description: "Thank you for your feedback!" });
+    }
+    setEditingReview(null);
+  };
+
+  const openReviewForm = (reviewToEdit?: Testimonial) => {
+    if (reviewToEdit) {
+      setEditingReview(reviewToEdit);
+    } else {
+      setEditingReview(null);
+    }
+    setIsReviewFormOpen(true);
   };
   
   return (
@@ -199,12 +230,13 @@ export function TestimonialsSection() {
       </Container>
 
       {testimonials.length > 0 ? (
-        <div className="testimonials-slider w-full px-4 md:px-0">
+        <div className="testimonials-slider w-full px-4 md:px-0 overflow-x-hidden">
           <Slider {...sliderSettings}>
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="h-full">
                 <TestimonialCard 
                   {...testimonial} 
+                  isInteractive={false} // Make all cards non-interactive for delete
                 />
               </div>
             ))}
@@ -221,9 +253,7 @@ export function TestimonialsSection() {
           <Button 
             size="lg" 
             className="bg-accent hover:bg-accent/90 text-accent-foreground"
-            onClick={() => {
-              setIsReviewFormOpen(true);
-            }}
+            onClick={() => openReviewForm()}
           >
             <Edit3 className="mr-2 h-5 w-5" />
             Write a Review
@@ -234,7 +264,8 @@ export function TestimonialsSection() {
       <ReviewForm
         isOpen={isReviewFormOpen}
         onClose={() => setIsReviewFormOpen(false)}
-        onSubmit={handleAddReview}
+        onSubmit={handleReviewSubmit}
+        initialData={editingReview}
       />
     </section>
   );
