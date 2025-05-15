@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -28,7 +29,7 @@ const initialTestimonialsData: Testimonial[] = [
     quote: "RIVE KOORA products have transformed my home into a sanctuary. The scents are so natural and calming. I love the Eucalyptus Breeze oil!",
     name: 'Sarah L.',
     avatarText: 'SL',
-    avatarImageUrl: 'https://placehold.co/100x100.png',
+    // avatarImageUrl: 'https://placehold.co/100x100.png', // Removed to show initials
     rating: 5,
   },
   {
@@ -43,7 +44,7 @@ const initialTestimonialsData: Testimonial[] = [
     quote: "I'm so impressed with the commitment to natural ingredients. You can really tell the difference. The Sandalwood candle is simply luxurious.",
     name: 'Emily K.',
     avatarText: 'EK',
-    avatarImageUrl: 'https://placehold.co/100x100.png',
+    // avatarImageUrl: 'https://placehold.co/100x100.png', // Removed to show initials
     rating: 4,
   },
 ];
@@ -158,7 +159,7 @@ export function TestimonialsSection() {
     autoplaySpeed: 5000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    pauseOnHover: false, // Changed from true to false
+    pauseOnHover: false, 
     responsive: [
       {
         breakpoint: 1024,
@@ -182,7 +183,7 @@ export function TestimonialsSection() {
       ...data,
       id: Date.now().toString(),
       avatarText,
-      avatarImageUrl: `https://placehold.co/100x100.png?text=${avatarText}`,
+      // No avatarImageUrl is set, so fallback (initials) will be used by default
       isUserAdded: true, 
     };
     setTestimonials(prev => [newReview, ...prev]); 
@@ -211,7 +212,7 @@ export function TestimonialsSection() {
               <div key={testimonial.id} className="h-full">
                 <TestimonialCard 
                   {...testimonial} 
-                  isInteractive={false}
+                  isInteractive={false} // No deletion functionality
                 />
               </div>
             ))}
