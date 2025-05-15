@@ -4,15 +4,14 @@ import Link from 'next/link';
 export function Logo() {
   return (
     <Link href="/" className="flex items-center">
-      {/* Assuming the logo.png is in the public folder */}
+      {/* Ensure your logo.png is in the public folder */}
       <Image
-        src="/logo.png" // This should point to public/logo.png
+        src="/logo.png"
         alt="RIVE KOORA Logo"
-        width={120} 
-        height={40}
+        width={150} 
+        height={50} 
         priority
-        className="object-contain" // Removed h-auto
-        style={{ border: '1px solid red' }} // Temporary border for debugging
+        className="object-contain" 
       />
     </Link>
   );
