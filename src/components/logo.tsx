@@ -5,12 +5,11 @@ export function Logo() {
   return (
     <Link href="/" className="flex items-center">
       {/* Ensure your logo.png is in the public folder */}
-      <Image
-        src="/logo.png"
+      <img
+        src="/images/Logo.png/"
         alt="RIVE KOORA Logo"
-        width={150} 
-        height={50} 
-        priority
+        width={75} 
+        height={75} 
         className="object-contain" 
       />
     </Link>

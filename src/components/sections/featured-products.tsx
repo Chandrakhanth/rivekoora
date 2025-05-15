@@ -6,7 +6,7 @@ const products = [
   {
     name: 'Eucalyptus Breeze Oil',
     description: 'Experience the invigorating purity of wild Australian eucalyptus. This potent essential oil is steam-distilled to capture its signature crisp, camphoraceous aroma. Perfect for diffusing to cleanse your space, adding to a steam inhalation for respiratory support, or blending into massage oils for a refreshing touch. Helps clear the mind and promote a sense of vitality. Its sharp, clean scent profile is both uplifting and purifying, reminiscent of a walk through a sun-drenched eucalyptus forest. Ideal for those seeking a natural way to enhance focus and breathe easier.',
-    imageUrl: "/breezeoil.jpg",
+    imageUrl: "/images/breezeoil.png",
     imageHint: 'eucalyptus leaves'
   },
   {
