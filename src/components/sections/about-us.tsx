@@ -7,29 +7,29 @@ import Slider from 'react-slick';
 import { cn } from '@/lib/utils';
 
 const sliderImages = [
-  { src: "https://placehold.co/600x400.png", alt: "Serene landscape 1", hint: "landscape" },
-  { src: "https://placehold.co/600x400.png", alt: "Natural ingredients 1", hint: "ingredients" },
-  { src: "https://placehold.co/600x400.png", alt: "Australian flora", hint: "flora" },
-  { src: "https://placehold.co/600x400.png", alt: "Crafting process", hint: "crafting" },
-  { src: "https://placehold.co/600x400.png", alt: "Product display", hint: "display" },
-  { src: "https://placehold.co/600x400.png", alt: "Serene landscape 2", hint: "landscape" },
-  { src: "https://placehold.co/600x400.png", alt: "Natural ingredients 2", hint: "ingredients" },
-  { src: "https://placehold.co/600x400.png", alt: "Australian fauna", hint: "fauna" },
-  { src: "https://placehold.co/600x400.png", alt: "Workshop view", hint: "workshop" },
-  { src: "https://placehold.co/600x400.png", alt: "Team photo", hint: "team" },
+  { src: "/images/abt-1.jpg", alt: "Serene landscape 1", hint: "landscape" },
+  { src:  "/images/abt-2.jpg", alt: "Natural ingredients 1", hint: "ingredients" },
+  { src: "/images/abt-3.jpg", alt: "Australian flora", hint: "flora" },
+  { src: "/images/abt-4.jpg", alt: "Crafting process", hint: "crafting" },
+  { src:  "/images/abt-5.jpg", alt: "Product display", hint: "display" },
+  { src:  "/images/abt-6.jpg", alt: "Serene landscape 2", hint: "landscape" },
+  { src:  "/images/abt-7.jpg", alt: "Natural ingredients 2", hint: "ingredients" },
+  { src:  "/images/abt-8.jpg", alt: "Australian fauna", hint: "fauna" },
+  { src:  "/images/abt-9.jpg", alt: "Workshop view", hint: "workshop" },
+  { src:  "/images/abt-10.jpg", alt: "Team photo", hint: "team" },
 ];
 
 export function AboutUsSection() {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 800, 
+    speed: 500, 
     autoplay: true,
     autoplaySpeed: 3000, 
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false, 
-    pauseOnHover: false, // Changed from true to false
+    pauseOnHover: false, 
     responsive: [
       {
         breakpoint: 1024,
@@ -56,7 +56,7 @@ export function AboutUsSection() {
             <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6">Our Story: Rooted in Nature</h2>
             <div className="space-y-4 text-foreground/90 text-base leading-relaxed">
               <p>
-                RIVE KOORA was born from a deep love for Australia's unique botanical heritage and a passion for holistic wellbeing. We believe in the power of nature to soothe, heal, and inspire. Our journey began with a simple mission: to capture the essence of the Australian landscape in its purest form and share it with the world.
+              Nestled in the pristine foothills of Yellagiri, RIVE KOORA has blossomed from humble flower trading roots into Asia's premier artisan producer of exquisite floral concretes, absolutes, and essential oils. For nearly four decades, we've cultivated direct relationships with organic farmers, combining time-honored harvesting traditions with cutting-edge extraction technologies in our state-of-the-art facility. As custodians of nature's fragrant treasures, we maintain complete traceability from soil to bottle, supplying discerning perfumeries and wellness brands across 20+ countries. More than manufacturers, we're cultivators of aromatic artistry - where each batch carries the legacy of our land, the dedication of our farming partners, and our uncompromising pursuit of purity that's earned global recognition.
               </p>
               <p>
                 We are committed to using only the finest natural ingredients, sustainably sourced from local growers and pristine environments. Each product is thoughtfully crafted, free from synthetic fragrances, parabens, and harsh chemicals. 
