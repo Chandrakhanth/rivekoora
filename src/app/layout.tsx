@@ -1,9 +1,11 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { WhatsAppButton } from '@/components/whatsapp-button'; // Import the WhatsApp button
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -26,10 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}>
         {children}
         <Toaster />
+        <WhatsAppButton /> {/* Add the WhatsApp button here */}
       </body>
     </html>
   );

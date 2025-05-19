@@ -1,9 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll if any element slightly overflows */
 }
 
 @layer base {
@@ -12,8 +14,8 @@ body {
     --background: 45 50% 98%; /* Very Light Cream */
     --foreground: 40 10% 25%; /* Dark Brown-Gray */
 
-    /* --muted: 45 30% 94%; 
-    --muted-foreground: 40 10% 45%;  */
+    --muted: 45 30% 94%; /* Light Beige Muted */
+    --muted-foreground: 40 10% 45%; /* Darker Brown-Gray Muted Text */
 
     --popover: 45 50% 99%; /* Almost White Cream */
     --popover-foreground: 40 10% 25%; /* Dark Brown-Gray */
@@ -117,10 +119,10 @@ body {
   @apply !bg-primary/50 hover:!bg-primary/70 !h-10 !w-10 !flex !items-center !justify-center !rounded-full z-10;
 }
 .slick-arrow.slick-prev {
-  @apply !left-6; /* Adjusted from 25px */
+  @apply !left-6;
 }
 .slick-arrow.slick-next {
-  @apply !right-6; /* Adjusted from 25px */
+  @apply !right-6;
 }
 .slick-arrow svg {
   @apply h-6 w-6 text-primary-foreground;
@@ -132,4 +134,73 @@ body {
 }
 .testimonials-slider .slick-list {
   margin: 0 -0.75rem; /* Counteract padding for full width appearance */
+}
+
+/* WhatsApp Floating Button Styles */
+.WhatsappFloatingBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed; /* Ensures button stays in place */
+  bottom: 20px;    /* Position from bottom */
+  left: 20px;     /* Position from left */
+  z-index: 1000;  /* Ensure it's above other content */
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #00d757; /* WhatsApp green */
+}
+
+.WhatsappFloatingSign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.WhatsappFloatingSign svg {
+  width: 25px;
+}
+
+.WhatsappFloatingSign svg path {
+  fill: white;
+}
+.WhatsappFloatingText {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em; /* Equivalent to text-lg */
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+
+.WhatsappFloatingBtn:hover {
+  width: 150px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.WhatsappFloatingBtn:hover .WhatsappFloatingSign {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 10px;
+}
+
+.WhatsappFloatingBtn:hover .WhatsappFloatingText {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+
+.WhatsappFloatingBtn:active {
+  transform: translate(2px, 2px);
 }

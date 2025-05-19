@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -18,10 +18,26 @@ const navItems = [
 ];
 
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-50 backdrop-blur-md">
+    <header className={cn("sticky top-0 z-50 w-full transition-colors duration-300", isScrolled ? 'bg-white/20 backdrop-blur border-b border-border/20' : 'bg-transparent')}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
         <nav className="hidden md:flex space-x-6">
@@ -29,14 +45,14 @@ export function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className={cn("text-sm font-medium hover:text-primary transition-colors", isScrolled ? 'text-foreground/80' : 'text-black')}
             >
               {item.label}
             </Link>
           ))}
         </nav>
         <div className="md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+          <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
@@ -60,7 +76,6 @@ export function Header() {
                       <Link
                         href={item.href}
                         className="text-lg font-medium text-foreground hover:text-primary transition-colors py-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}
                       </Link>
