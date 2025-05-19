@@ -1,12 +1,12 @@
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center">
-      {/* Ensure your logo.png is in the public folder */}
+    <Link href="/" className="flex items-center ml-[2px]">
+    
       <img
-        src="/images/Logo.png/"
+        src="/images/mainlogo.png" 
         alt="RIVE KOORA Logo"
         width={75} 
         height={75} 
