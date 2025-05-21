@@ -34,7 +34,7 @@ export function HeroSection() {
         </p>
         <div className="mt-10">
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#products">Explore Our Scents</Link>
+            <Link href="/our-scents">Explore Our Scents</Link>
           </Button>
         </div>
       </Container>

@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth !important; /* Ensure smooth scrolling */
+}
+
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden; /* Prevent horizontal scroll if any element slightly overflows */
@@ -204,3 +208,44 @@ body {
 .WhatsappFloatingBtn:active {
   transform: translate(2px, 2px);
 }
+
+/* Our Scents page product slider specific styling */
+.our-scents-slider-section .slick-list {
+  overflow: visible; /* Allows box shadows from cards to be fully visible if they extend */
+}
+.our-scents-slider-section .slick-slide > div { /* Target the direct child div of slick-slide for 100% height */
+  height: 100%;
+}
+.our-scents-slider-section .slick-slide > div > div { /* Target the card itself for 100% height */
+  height: 100%;
+  display: flex; 
+  flex-direction: column; 
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .our-scents-slider-section .slick-slide > div > div {
+    flex-direction: row; 
+  }
+}
+
+/* Custom scrollbar for product description in Our Scents page */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.5);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.6);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted) / 0.5);
+}
+

@@ -10,11 +10,11 @@ import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Products', href: '#products' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Our Scents', href: '/our-scents' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Testimonials', href: '/#testimonials' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export function Header() {
@@ -22,7 +22,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 50) { // Trigger slightly lower for better visual effect
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -30,6 +30,7 @@ export function Header() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount to set initial state
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -37,7 +38,10 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full transition-colors duration-300", isScrolled ? 'bg-white/20 backdrop-blur border-b border-border/20' : 'bg-transparent')}>
+    <header className={cn(
+      "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out", 
+      isScrolled ? 'bg-background/80 backdrop-blur-lg shadow-md border-b border-border/30' : 'bg-transparent backdrop-blur-md border-b border-transparent'
+    )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
         <nav className="hidden md:flex space-x-6">
@@ -45,7 +49,10 @@ export function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className={cn("text-sm font-medium hover:text-primary transition-colors", isScrolled ? 'text-foreground/80' : 'text-black')}
+              className={cn(
+                "text-sm font-medium hover:text-primary transition-colors", 
+                isScrolled ? 'text-foreground/90' : 'text-white' // Text color white when not scrolled (on hero)
+              )}
             >
               {item.label}
             </Link>
@@ -54,7 +61,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className={cn(isScrolled ? 'text-foreground/90' : 'text-white hover:text-primary')}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>

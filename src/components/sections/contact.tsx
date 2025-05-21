@@ -124,7 +124,7 @@ export function ContactSection() {
                 <Mail className="h-8 w-8 text-accent mt-1"/>
                 <div>
                     <h4 className="font-semibold text-primary">Email Us</h4>
-                    <a href="mailto:hello@rivekoora.com.au" className="text-foreground/80 hover:text-primary">hello@rivekoora.com.au</a>
+                    <a href="mailto:poojaprem22@gmail.com" className="text-foreground/80 hover:text-primary">poojaprem22@gmail.com</a>
                     <p className="text-sm text-muted-foreground">We reply within 24 hours</p>
                 </div>
              </div>
@@ -132,7 +132,7 @@ export function ContactSection() {
                 <Phone className="h-8 w-8 text-accent mt-1"/>
                 <div>
                     <h4 className="font-semibold text-primary">Call Us</h4>
-                    <a href="tel:+61400000000" className="text-foreground/80 hover:text-primary">(+61) 400 000 000</a>
+                    <a href="tel:+61400000000" className="text-foreground/80 hover:text-primary">(+61)433794037</a>
                     <p className="text-sm text-muted-foreground">Mon - Fri, 9am - 5pm AEST</p>
                 </div>
              </div>
@@ -140,7 +140,7 @@ export function ContactSection() {
                 <MapPin className="h-8 w-8 text-accent mt-1"/>
                 <div>
                     <h4 className="font-semibold text-primary">Visit Us (By Appointment)</h4>
-                    <p className="text-foreground/80">123 Nature Lane, Sydney, NSW 2000, Australia</p>
+                    <p className="text-foreground/80">COMING SOON......</p>
                     <p className="text-sm text-muted-foreground">Online store open 24/7</p>
                 </div>
              </div>
