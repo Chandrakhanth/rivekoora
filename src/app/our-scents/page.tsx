@@ -9,19 +9,20 @@ import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/container';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronRight, Leaf } from 'lucide-react';
+import styles from './OurScents.module.css'; // Import the CSS module
 import { Card, CardContent } from '@/components/ui/card';
 
 const products = [
   {
-    name: 'Floral Concrete: The Essence of Botanical Luxury',
-    description: 'Floral concrete is a rich, semi-solid aromatic extract obtained through solvent extraction of delicate flowers like rose, jasmine, and ylang-ylang. This precious material captures the complete fragrant profile of blossoms, containing concentrated essential oils, natural waxes, and plant resins. While its limited solubility in alcohol makes it less common in fine perfumery, floral concrete shines as a luxurious base for artisanal soaps, skincare, and natural cosmetics, offering unparalleled depth and longevity to formulations. The extraction process begins with fresh botanicals treated with pharmaceutical-grade solvents, then carefully evaporated to preserve the flowers true essence - resulting in a waxy, fragrant substance that embodies natures most intoxicating scents.',
-    imageUrl: "/images/flora-1.png",
+    name: 'Jasmine Sambac Absolute Oil',
+    description: 'Rive Koora presents Jasmine Sambac Absolute Oil—a luxurious, solvent-extracted essence from the finest Jasminum Sambac blossoms, handpicked at dusk in India (March–June) to capture their richest, most intoxicating fragrance. Using premium hexane and ethanol extraction, we preserve the flower’s heady, animalic allure—a symbol of purity and eternal love in Asian traditions. Packaged in a sleek, airtight modern aluminum tin (30ml) to ensure longevity, this oil is ideal for perfumery, aromatherapy, and bespoke formulations. Elevate your creations with the timeless scent of royalty',
+    imageUrl: "/images/PRODUCT-1.png",
     imageHint: 'eucalyptus leaves',
     alt: 'Floral Concrete Ingredients and Texture'
   },
   {
-    name: 'Floral Absolute: The Purest Botanical Elixir',
-    description: 'Floral absolute is an exquisite, highly concentrated aromatic extract—a viscous liquid or semi-solid substance composed of alcohol-soluble waxes, natural pigments, and the volatile essence of plants. Obtained through delicate solvent extraction, these precious elixirs capture the true soul of botanicals like rose, jasmine, and lavender in their most potent form. While similar to essential oils, absolutes offer unparalleled fragrance complexity and are prized in haute perfumery for their rich, multi-layered scents, as well as in aromatherapy for their profound therapeutic qualities.',
+    name: 'Jasmine Grandiflorum Absolute',
+    description: '"Rive Koora introduces Jasmine Grandiflorum Absolute Oil—an exquisite, hexane-extracted essence from delicate Jasminum Grandiflorum blossoms, handpicked at dawn in India (June–August) to preserve their sweet, floral intensity. Ethanol-refined to perfection, this oil captures the vine’s iconic pink-tinged white flowers, revered in haute perfumery for their romantic, honeyed aroma. Housed in a premium airtight aluminum tin (30ml), it ensures potency for luxury fragrances, skincare, and bespoke blends. A dawn-harvested jewel of perfumery—indulge in timeless elegance."',
     imageUrl: "/images/flora-2.png",
     imageHint: 'skincare product',
     alt: 'Vibrant Floral Absolute Liquid'
@@ -50,6 +51,7 @@ const products = [
 ];
 
 const essentialOilsList = [
+  
   {
     name: "Pure Lavender Essential Oil",
     description: "Calming and relaxing, our steam-distilled Lavender Essential Oil from high-altitude French lavender offers a sweet, floral, and herbaceous aroma. Ideal for promoting sleep, soothing skin irritations, and creating a peaceful ambiance. Versatile and gentle, it's a cornerstone of any aromatherapy toolkit, cherished for its wide range of benefits and lovely scent.",
@@ -83,20 +85,41 @@ const essentialOilsList = [
 
 export default function OurScentsPage() {
   const sliderSettings = {
-    dots: false,
-    arrows: false,
+    dots: false, // No dots
+    arrows: false, // No arrows
     infinite: true,
-    speed: 1500, // Speed of the fade transition (slower)
-    fade: true,
+    speed: 800, // Slower speed for transition
+    fade: true, // Fade effect
     autoplay: true,
-    autoplaySpeed: 7000, // Time between slides (slower)
+    autoplaySpeed: 4000, // Slower autoplay interval
+    pauseOnHover: true, // Pause on hover
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnHover: true, // Pause on hover
+  };
+  
+  const essentialOilSettings: any = {
+    dots: false, // No dots for pagination
+    arrows: false, // Keep arrows disabled for this slider
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    slidesToShow: 1, 
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768, 
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background our-scents-page">
       <Header />
       <main className="flex-grow">
         <section className="py-16 lg:py-24 bg-secondary/10">
@@ -106,13 +129,13 @@ export default function OurScentsPage() {
                 Discover Our Extracts
               </h1>
               <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-foreground/80 sm:text-xl">
-                At RIVE KOORA, we harness the soul of nature through meticulous extraction processes. Our floral concretes, absolutes, and essential oils are the heart of authentic aromatherapy and fine perfumery, crafted with decades of expertise and a deep respect for botanical integrity. Each extract tells a story of purity, potency, and the pristine environments from which they originate.
+              "Rive Koora specializes in crafting premium floral extracts using only the freshest, highest-quality flowers and cutting-edge extraction technologies. Browse our curated inventory below, and if you don’t find what you’re looking for, contact us—our team will gladly source or customize the perfect product for your needs."
               </p>
             </div>
           </Container>
         </section>
 
-        <section className="py-16 lg:py-24 our-scents-slider-section bg-background">
+        <section className="py-16 lg:py-24 our-scents-slider-section bg-background relative">
           <Container className="max-w-screen-lg">
             <Slider {...sliderSettings}>
               {products.map((product, index) => (
@@ -141,7 +164,7 @@ export default function OurScentsPage() {
             </Slider>
           </Container>
         </section>
-        
+
         <section className="py-16 lg:py-24 bg-secondary/5">
           <Container>
             <div className="text-center mb-12">
@@ -153,11 +176,11 @@ export default function OurScentsPage() {
               </p>
             </div>
 
-            <div className="space-y-16">
+            <Slider {...essentialOilSettings} className={styles['essential-oil-slider']}>
               {essentialOilsList.map((oil, index) => (
                 <Card 
                   key={oil.name} 
-                  className={`overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex flex-col md:flex-row bg-card`}
+                  className={`overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col md:flex-row bg-card my-2`}
                 >
                   <div className="md:w-1/3 lg:w-2/5 relative h-64 md:h-auto">
                     <Image
@@ -178,7 +201,7 @@ export default function OurScentsPage() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+            </Slider>
           </Container>
         </section>
 
@@ -194,10 +217,8 @@ export default function OurScentsPage() {
                 </Button>
             </Container>
         </section>
-
       </main>
       <Footer />
     </div>
-  );
+ );
 }
-

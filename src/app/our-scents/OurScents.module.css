@@ -1,0 +1,9 @@
+.essential-oil-slider .slick-dots {
+  left: 2px;;
+  width: 200%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(-50%);
+  top: 50%;
+}

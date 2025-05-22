@@ -42,15 +42,40 @@ export function ContactSection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // This is a static site, so we'll just simulate a submission.
-    console.log(values);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. We'll be in touch soon.",
-      variant: "default", 
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const formData = new FormData();
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("message", values.message);
+    formData.append("access_key", "66d98b81-4c0a-48eb-a22d-dc6e3174d93c");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
     });
-    form.reset();
+    const data = await res.json();
+
+    if (data.success) {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. We'll be in touch soon.",
+        variant: "default",
+      });
+      form.reset();
+    } else {
+      toast({
+        title: "Error",
+        description: data.message || "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (

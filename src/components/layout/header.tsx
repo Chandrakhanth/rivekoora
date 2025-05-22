@@ -51,7 +51,7 @@ export function Header() {
               href={item.href}
               className={cn(
                 "text-sm font-medium hover:text-primary transition-colors", 
-                isScrolled ? 'text-foreground/90' : 'text-white' // Text color white when not scrolled (on hero)
+                isScrolled ? 'text-foreground' : 'text-black' // Text color white when not scrolled (on hero)
               )}
             >
               {item.label}
