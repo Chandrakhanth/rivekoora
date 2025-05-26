@@ -103,7 +103,7 @@ export default function OurScentsPage() {
     arrows: false, 
     infinite: true,
     speed: 800, 
-    fade: true, 
+    fade: false, // Reverted from true to false
     autoplay: true,
     autoplaySpeed: 4000, 
     pauseOnHover: true, 
@@ -236,5 +236,7 @@ export default function OurScentsPage() {
  );
 }
 
+
+    
 
     
