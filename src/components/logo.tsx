@@ -6,13 +6,13 @@ export function Logo() {
     <Link href="/" >
     
     <img
-  src="/images/mainlogo.png" 
+  src="/images/logo-1.png" 
   alt="RIVE KOORA Logo"
-  width={150} 
+  width={160} 
   height={75} 
   style={{
     marginLeft: '-2rem',
-    marginTop: '2rem',   
+    marginTop: '1rem',   
     marginBottom: '10px' 
   }}
   className="object-contain"

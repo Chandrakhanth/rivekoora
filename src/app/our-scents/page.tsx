@@ -23,31 +23,45 @@ const products = [
   {
     name: 'Jasmine Grandiflorum Absolute',
     description: '"Rive Koora introduces Jasmine Grandiflorum Absolute Oil—an exquisite, hexane-extracted essence from delicate Jasminum Grandiflorum blossoms, handpicked at dawn in India (June–August) to preserve their sweet, floral intensity. Ethanol-refined to perfection, this oil captures the vine’s iconic pink-tinged white flowers, revered in haute perfumery for their romantic, honeyed aroma. Housed in a premium airtight aluminum tin (30ml), it ensures potency for luxury fragrances, skincare, and bespoke blends. A dawn-harvested jewel of perfumery—indulge in timeless elegance."',
-    imageUrl: "/images/flora-2.png",
+    imageUrl: "/images/our-2.png",
     imageHint: 'skincare product',
     alt: 'Vibrant Floral Absolute Liquid'
   },
   {
-    name: 'Essential Oils: Nature Concentrated Aromatic Essence',
-    description: 'Essential oils are highly concentrated, volatile plant extracts that capture the complete aromatic profile and therapeutic properties of botanicals through meticulous extraction methods like steam distillation or cold pressing. These potent liquids contain the true "essence" of plants—their characteristic fragrance, flavor, and bioactive compounds—which must be carefully preserved by avoiding chemical processing. To ensure safety and efficacy, pure essential oils are typically diluted with carrier oils before use in aromatherapy, perfumery, or holistic wellness applications, offering an authentic connection to natures healing intelligence.',
-    imageUrl: "/images/flora-3.png",
+    name: 'Tuberose Absolute & Concrete',
+    description: '"Rive Koora presents Tuberose Absolute & Concrete - luxurious extracts from Indias finest Polianthes tuberosa blossoms, hand-harvested at peak fragrance (April-June). Our hexane-extracted Tuberose Concrete (solid) captures the waxy, intense aroma of Rajanigandha, perfect for perfumery fixatives. The ethanol-refined Tuberose Absolute (liquid) offers a radiant, sweet-floral essence, ideal for high-end fragrances. Both are 100% pure, solvent-free, and sustainably sourced - the concrete in an airtight matte gold aluminum tin to preserve its richness, and the absolute in a UV-protected amber glass bottle to maintain purity. Experience the opulence of Indian tuberose, revered for centuries in royal aromatherapy."',
+    imageUrl: "/images/tubb.png",
     imageHint: 'candle flame',
     alt: 'Dropper with Pure Essential Oil'
   },
   {
-    name: 'Aromatic Resinoids: Earth\'s Ancient Perfumes',
-    description: 'Resinoids are solvent extracts of natural resinous materials like frankincense, myrrh, and benzoin. These thick, often sticky substances capture the deep, tenacious, and complex base notes that have been used in perfumery and incense for millennia. They provide grounding, warmth, and fixative qualities to fragrance blends, embodying ancient traditions and profound aromatic depth.',
-    imageUrl: "https://placehold.co/800x600.png",
+    name: 'Red Champaca Absolute & Concrete',
+    description: '"Rive Koora presents Red Champaca Absolute & Concrete – exquisite, solvent-free extracts from the rare Michelia champaca blossoms, hand-harvested in India during peak seasons (April-May & Sept-Oct). Our hexane-extracted Champaca Concrete (solid) captures the deep, honeyed richness of Champak, prized as a perfumery treasure. The ethanol-refined Champaca Absolute (liquid) delivers a luminous, floral-spicy essence, famously used in legendary fragrances like Joy by Jean Patou.',
+    imageUrl:  "/images/recam.png",
     imageHint: 'incense resin',
     alt: 'Textured Aromatic Resinoids'
   },
   {
-    name: 'Botanical Hydrosols: Gentle Floral Waters',
-    description: 'Hydrosols, also known as floral waters, are the gentle, aromatic waters co-produced during the steam distillation of plant materials for essential oils. They contain water-soluble fragrant compounds and trace amounts of essential oils, offering a softer, more subtle scent profile. Perfect for delicate facial toners, linen sprays, and light body mists, hydrosols provide refreshing hydration and mild therapeutic benefits.',
-    imageUrl: "https://placehold.co/800x600.png",
+    name: 'Frangipani Absolute & Concrete',
+    description: '"Rive Koora presents Frangipani Absolute & Concrete – sun-drenched essences of Plumeria Alba blossoms, hand-gathered from India’s April-May harvest. Our hexane-extracted Frangipani Concrete (solid) preserves the waxy, tropical richness of its petals, while the ethanol-refined Absolute (liquid) distills its iconic floral-citrus bouquet."',
+    imageUrl: "/images/fra.png",
     imageHint: 'water spray',
     alt: 'Clear Botanical Hydrosols in bottles'
-  }
+  },
+  {
+    name: 'Lotus Absolute & Concrete',
+    description: '"Rive Koora presents Lotus Absolute & Concrete – sacred essences of Nelumbo nucifera, hand-harvested from Indias monsoon-fed waters (July-Sept). Our hexane-extracted Lotus Concrete (solid) captures the waxy, earthy depth of 1,300-year-old seeds, while the ethanol-refined Absolute (liquid) distills its ethereal floral-spiritual bouquet."',
+    imageUrl: "/images/lou.png",
+    imageHint: 'water spray',
+    alt: 'Clear Botanical Hydrosols in bottles'
+  },
+  {
+    name: ' Rose Centifolia Absolute & Concrete',
+    description: '"Rive Koora presents Rose Centifolia Absolute & Concrete – capturing the legendary fragrance of Grasse in two pristine forms. Our hexane-extracted Rose Concrete (solid) preserves the waxy, honeyed depth of hand-picked Rosa centifolia petals from Indias April-June harvest, while the ethanol-refined Absolute (liquid) distills its crystalline floral sweetness."',
+    imageUrl: "/images/rose.png",
+    imageHint: 'water spray',
+    alt: 'Clear Botanical Hydrosols in bottles'
+  },
 ];
 
 const essentialOilsList = [
@@ -85,21 +99,21 @@ const essentialOilsList = [
 
 export default function OurScentsPage() {
   const sliderSettings = {
-    dots: false, // No dots
-    arrows: false, // No arrows
+    dots: false, 
+    arrows: false, 
     infinite: true,
-    speed: 800, // Slower speed for transition
-    fade: true, // Fade effect
+    speed: 800, 
+    fade: true, 
     autoplay: true,
-    autoplaySpeed: 4000, // Slower autoplay interval
-    pauseOnHover: true, // Pause on hover
+    autoplaySpeed: 4000, 
+    pauseOnHover: true, 
     slidesToShow: 1,
     slidesToScroll: 1,
   };
   
   const essentialOilSettings: any = {
-    dots: false, // No dots for pagination
-    arrows: false, // Keep arrows disabled for this slider
+    dots: false, 
+    arrows: false, 
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -190,6 +204,7 @@ export default function OurScentsPage() {
                       sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 40vw"
                       className="object-cover"
                       data-ai-hint={oil.imageHint}
+                      priority={index === 0}
                     />
                   </div>
                   <CardContent className="p-6 md:p-8 lg:p-10 flex flex-col justify-center md:w-2/3 lg:w-3/5">
