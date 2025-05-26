@@ -163,7 +163,6 @@ export default function OurScentsPage() {
                         sizes="(max-width: 1023px) 100vw, 50vw"
                         className="object-cover"
                         data-ai-hint={product.imageHint}
-                        priority={index === 0}
                       />
                     </div>
                     <div className="lg:w-1/2 p-6 md:p-8 lg:p-12 flex flex-col justify-center">
@@ -204,7 +203,6 @@ export default function OurScentsPage() {
                       sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 40vw"
                       className="object-cover"
                       data-ai-hint={oil.imageHint}
-                      priority={index === 0}
                     />
                   </div>
                   <CardContent className="p-6 md:p-8 lg:p-10 flex flex-col justify-center md:w-2/3 lg:w-3/5">
@@ -237,3 +235,6 @@ export default function OurScentsPage() {
     </div>
  );
 }
+
+
+    
