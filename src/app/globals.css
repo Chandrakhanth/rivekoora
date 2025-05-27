@@ -252,34 +252,20 @@ body {
   scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted) / 0.5);
 }
 
-/* Essential Oils Slider on Our Scents Page */
-.essential-oil-asymmetric-slider .slick-slide {
-  padding: 0 1rem; /* Spacing for slides if needed */
-}
-.essential-oil-asymmetric-slider .slick-list {
-  margin: 0 -1rem;
-}
-.essential-oil-asymmetric-slider .image-container {
-  overflow: hidden; /* Ensure zoom effect is contained */
+/* Essential Oils Section on Our Scents Page (previously .essential-oil-asymmetric-slider) */
+/* Styles for image hover effects if needed globally, or can be component-specific */
+.image-container { /* General image container class if used elsewhere, can be more specific */
+  overflow: hidden;
   position: relative;
 }
-.essential-oil-asymmetric-slider .image-container img {
+.image-container img {
   transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
-/* Keep the hover effect for images in essential oils if needed, or remove if handled by group-hover in component */
-/* .essential-oil-asymmetric-slider .image-container:hover img {
-  transform: scale(1.1);
-  filter: brightness(1.05);
-} */
-
-/* Vertical slider adjustments */
-.essential-oil-asymmetric-slider.slick-vertical .slick-slide {
-  border: none; /* Remove borders if any were implicitly added */
-  padding: 0.5rem 0; /* Add vertical padding between slides */
-}
-
-.essential-oil-asymmetric-slider.slick-vertical .slick-list {
-  margin: 0; /* Reset horizontal margins */
-}
-
+/*
+  The :hover styles are handled by group-hover in the component:
+  .image-container:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.05);
+  }
+*/
     
