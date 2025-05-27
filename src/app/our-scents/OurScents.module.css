@@ -1,9 +1,21 @@
+
+/* Styles for essential oil slider dots if they were enabled */
 .essential-oil-slider .slick-dots {
-  left: 2px;;
-  width: 200%;
+  left: 2px;
+  width: auto; /* Adjusted from 200% as it might not be needed or could cause layout issues */
   display: flex !important;
   flex-direction: column;
   justify-content: center;
   transform: translateY(-50%);
   top: 50%;
+  position: absolute; /* Ensure dots are positioned relative to the slider */
+}
+
+/* Ensure slides in the essential oil slider have consistent height if using h-full */
+.essential-oil-slider .slick-slide > div {
+  height: 100%;
+}
+.essential-oil-slider .slick-slide > div > div {
+  height: 100%;
+  display: flex; /* Ensure card inside takes full height and allows flex properties */
 }
