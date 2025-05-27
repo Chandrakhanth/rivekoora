@@ -7,7 +7,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/container';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MapPin, CalendarDays } from 'lucide-react';
+import { ArrowRight, MapPin, CalendarDays, TrendingUp } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import Slider from 'react-slick';
 import { cn } from '@/lib/utils';
@@ -113,7 +113,7 @@ const essentialOilsForSlider = [
   products.find(p => p.name.includes('Red Champaca')),
   products.find(p => p.name.includes('Frangipani Absolute')),
   products.find(p => p.name.includes('Lotus Absolute')),
-].filter(Boolean) as (typeof products[0])[]; // filter(Boolean) removes undefined if find fails
+].filter(Boolean) as (typeof products[0])[];
 
 
 export default function OurScentsPage() {
@@ -122,7 +122,7 @@ export default function OurScentsPage() {
     arrows: false,
     infinite: true,
     speed: 800,
-    fade: false, 
+    fade: false,
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
@@ -140,9 +140,11 @@ export default function OurScentsPage() {
     pauseOnHover: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    fade: true, // Using fade for a smoother transition between complex layouts
+    vertical: true,
+    verticalSwiping: true,
+    fade: false, 
   };
-  
+
 
   return (
     <div className="flex flex-col min-h-screen bg-background our-scents-page font-sans">
@@ -167,13 +169,13 @@ export default function OurScentsPage() {
               {products.map((product, index) => (
                 <div key={index} className="our-scents-slide px-0 md:px-4">
                   <div className="bg-card rounded-xl shadow-2xl overflow-hidden lg:flex lg:min-h-[600px] lg:max-h-[650px]">
-                    <div className="lg:w-1/2 relative h-80 lg:h-auto">
+                    <div className="lg:w-1/2 relative h-80 lg:h-auto group overflow-hidden">
                       <Image
                         src={product.imageUrl}
                         alt={product.alt}
                         fill
                         sizes="(max-width: 1023px) 100vw, 50vw"
-                        className="object-cover"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
                         data-ai-hint={product.imageHint}
                       />
                     </div>
@@ -201,30 +203,30 @@ export default function OurScentsPage() {
               </p>
             </div>
 
-            <div className="essential-oil-asymmetric-slider">
+            <div className="essential-oil-asymmetric-slider h-[650px] overflow-hidden"> {/* Added fixed height and overflow-hidden */}
               <Slider {...essentialOilsSliderSettings}>
                 {essentialOilsForSlider.map((oil, index) => (
-                  <div key={oil.name} className="px-1 md:px-2 h-full">
+                  <div key={oil.name} className="px-1 md:px-2 h-full py-2"> {/* Added py-2 for vertical spacing between slides */}
                     <Card className={cn(
-                      "overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col md:flex-row bg-cream-100 min-h-[500px] md:min-h-[550px] lg:min-h-[600px] rounded-lg relative",
-                      index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse" // Alternates overall layout
+                      "overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col md:flex-row bg-card min-h-[500px] md:min-h-[550px] lg:min-h-[600px] rounded-lg relative h-full", // Added h-full
+                      index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                     )}>
-                      {/* Image Div */}
                       <div className={cn(
-                        "md:w-1/2 relative h-72 md:h-auto image-container",
-                        index % 2 === 0 ? "" : "md:aspect-[3/4]" // Apply 3:4 for even (right image)
+                        "md:w-1/2 relative h-72 md:h-auto image-container group", // Added group for hover effect
+                        index % 2 !== 0 ? "md:aspect-[3/4]" : "" // Apply 3:4 for even (right image - which becomes odd in 0-index)
                       )}>
-                        <Image
-                          src={oil.imageUrl}
-                          alt={oil.alt}
-                          fill
-                          sizes="(max-width: 767px) 100vw, 50vw"
-                          className="object-cover w-full h-full" // Ensure image fills its container
-                          data-ai-hint={oil.imageHint}
-                        />
+                         <div className="relative w-full h-full overflow-hidden">
+                          <Image
+                            src={oil.imageUrl}
+                            alt={oil.alt}
+                            fill
+                            sizes="(max-width: 767px) 100vw, 50vw"
+                            className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110"
+                            data-ai-hint={oil.imageHint}
+                          />
+                        </div>
                       </div>
                       
-                      {/* Content Div - takes remaining width and centers content */}
                       <div className={cn(
                         "md:w-1/2 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col relative",
                         index % 2 === 0 ? "items-start text-left" : "items-end text-right"
@@ -234,7 +236,7 @@ export default function OurScentsPage() {
                            index % 2 === 0 ? "md:self-start" : "md:self-end"
                         )}>
                           <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1">
-                            {oil.name.split(':')[0]} {/* Show only main name if colon exists */}
+                            {oil.name.split(':')[0]} 
                           </h3>
                           <p className="text-sm sm:text-base italic text-foreground/70 mb-4">
                             {oil.botanicalName}
@@ -282,3 +284,5 @@ export default function OurScentsPage() {
     </div>
  );
 }
+
+    
