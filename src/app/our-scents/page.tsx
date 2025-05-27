@@ -3,7 +3,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Slider from 'react-slick';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/container';
@@ -11,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronRight, Leaf } from 'lucide-react';
 import styles from './OurScents.module.css'; // Import the CSS module
 import { Card, CardContent } from '@/components/ui/card';
+import Slider from 'react-slick';
 
 const products = [
   {
@@ -62,75 +62,39 @@ const products = [
     imageHint: 'water spray',
     alt: 'Clear Botanical Hydrosols in bottles'
   },
+  {
+    name: 'Mimosa Absolute & Concrete',
+    description: '"Rive Koora presents Mimosa Absolute & Concrete – golden essences of Mimosa pudica, sustainably harvested from Indias monsoon blooms (June-Sept). Our hexane-extracted Mimosa Concrete (solid) captures the waxy, honeyed richness of its fragrant glomeruli, while the ethanol-refined Absolute (liquid) distills its vibrant floral-balsamic soul."',
+    imageUrl: "/images/mimo.png",
+    imageHint: 'water spray',
+    alt: 'Clear Botanical Hydrosols in bottles'
+  },
+  {
+    name: 'Jasmine Auriculatum Absolute & Concrete',
+    description: '"Rive Koora unveils Jasmine Auriculatum Absolute & Concrete – rare essences of the elusive Jasminum auriculatum, hand-harvested from India’s March-June blooms. Our hexane-extracted Concrete (solid) preserves the waxy, gardenia-like intensity of its satin-white petals, while the ethanol-refined Absolute (liquid) distills its hypnotic floral-powdery bouquet."',
+    imageUrl: "/images/jas.png",
+    imageHint: 'water spray',
+    alt: 'Clear Botanical Hydrosols in bottles'
+  },
 ];
 
-const essentialOilsList = [
-  
-  {
-    name: "Pure Lavender Essential Oil",
-    description: "Calming and relaxing, our steam-distilled Lavender Essential Oil from high-altitude French lavender offers a sweet, floral, and herbaceous aroma. Ideal for promoting sleep, soothing skin irritations, and creating a peaceful ambiance. Versatile and gentle, it's a cornerstone of any aromatherapy toolkit, cherished for its wide range of benefits and lovely scent.",
-    imageUrl: "https://placehold.co/500x500.png",
-    imageHint: "lavender flower",
-    alt: "Bottle of Lavender Essential Oil with lavender sprigs"
-  },
-  {
-    name: "Refreshing Peppermint Essential Oil",
-    description: "Invigorating and cooling, this Peppermint Essential Oil boasts a strong, minty, and fresh scent. Excellent for boosting focus, relieving headaches, and soothing muscle discomfort. Its stimulating aroma can also help clear nasal passages and uplift the senses, making it a popular choice for diffusers and topical applications.",
-    imageUrl: "https://placehold.co/500x500.png",
-    imageHint: "peppermint leaves",
-    alt: "Bottle of Peppermint Essential Oil with peppermint leaves"
-  },
-  {
-    name: "Uplifting Lemon Essential Oil",
-    description: "Bright and zesty, our cold-pressed Lemon Essential Oil is a burst of sunshine. Known for its cleansing properties and mood-enhancing aroma, it's perfect for diffusing to purify the air or adding to natural cleaning solutions. Its cheerful scent can invigorate the mind and promote a positive atmosphere.",
-    imageUrl: "https://placehold.co/500x500.png",
-    imageHint: "lemon fruit",
-    alt: "Bottle of Lemon Essential Oil with lemon slices"
-  },
-  {
-    name: "Earthy Tea Tree Essential Oil",
-    description: "Renowned for its powerful purifying properties, Tea Tree Essential Oil offers a fresh, medicinal, and camphoraceous aroma. A versatile oil for skincare, it helps cleanse and soothe blemishes, and can be used in household cleaners. Its robust scent is also valued for its grounding and clarifying effects on the mind.",
-    imageUrl: "https://placehold.co/500x500.png",
-    imageHint: "tea tree",
-    alt: "Bottle of Tea Tree Essential Oil with tea tree leaves"
-  }
-];
+const essentialOilsList = [  {    name: "Pure Lavender Essential Oil",    description: "Calming and relaxing, our steam-distilled Lavender Essential Oil from high-altitude French lavender offers a sweet, floral, and herbaceous aroma. Ideal for promoting sleep, soothing skin irritations, and creating a peaceful ambiance. Versatile and gentle, it's a cornerstone of any aromatherapy toolkit, cherished for its wide range of benefits and lovely scent.",    imageUrl: "/images/fl-3.png",    imageHint: "lavender flower",    alt: "Bottle of Lavender Essential Oil with lavender sprigs"  },  {    name: "Refreshing Peppermint Essential Oil",    description: "Invigorating and cooling, this Peppermint Essential Oil boasts a strong, minty, and fresh scent. Excellent for boosting focus, relieving headaches, and soothing muscle discomfort. Its stimulating aroma can also help clear nasal passages and uplift the senses, making it a popular choice for diffusers and topical applications.",    imageUrl: "/images/fl-1.png",    imageHint: "peppermint leaves",    alt: "Bottle of Peppermint Essential Oil with peppermint leaves"  },  {    name: "Uplifting Lemon Essential Oil",    description: "Bright and zesty, our cold-pressed Lemon Essential Oil is a burst of sunshine. Known for its cleansing properties and mood-enhancing aroma, it's perfect for diffusing to purify the air or adding to natural cleaning solutions. Its cheerful scent can invigorate the mind and promote a positive atmosphere.",    imageUrl: "/images/fl-2.png",    imageHint: "lemon fruit",    alt: "Bottle of Lemon Essential Oil with lemon slices"  },  {    name: "Earthy Tea Tree Essential Oil",    description: "Renowned for its powerful purifying properties, Tea Tree Essential Oil offers a fresh, medicinal, and camphoraceous aroma. A versatile oil for skincare, it helps cleanse and soothe blemishes, and can be used in household cleaners. Its robust scent is also valued for its grounding and clarifying effects on the mind.",    imageUrl: "/images/breezeoil.jpg",    imageHint: "tea tree",    alt: "Bottle of Tea Tree Essential Oil with tea tree leaves"  }];
 
 
 export default function OurScentsPage() {
   const sliderSettings = {
-    dots: false, 
-    arrows: false, 
+    dots: false,
+    arrows: false,
     infinite: true,
-    speed: 800, 
-    fade: false, // Reverted from true to false
+    speed: 800,
+    fade: false, 
     autoplay: true,
-    autoplaySpeed: 4000, 
-    pauseOnHover: true, 
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
   
-  const essentialOilSettings: any = {
-    dots: false, 
-    arrows: false, 
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    slidesToShow: 1, 
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768, 
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  };
 
   return (
     <div className="flex flex-col min-h-screen bg-background our-scents-page">
@@ -149,7 +113,7 @@ export default function OurScentsPage() {
           </Container>
         </section>
 
-        <section className="py-16 lg:py-24 our-scents-slider-section bg-background relative">
+        <section className="py-16 lg:py-24 bg-background relative our-scents-slider-section">
           <Container className="max-w-screen-lg">
             <Slider {...sliderSettings}>
               {products.map((product, index) => (
@@ -189,32 +153,29 @@ export default function OurScentsPage() {
               </p>
             </div>
 
-            <Slider {...essentialOilSettings} className={styles['essential-oil-slider']}>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
               {essentialOilsList.map((oil, index) => (
-                <Card 
-                  key={oil.name} 
-                  className={`overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col md:flex-row bg-card my-2`}
-                >
+                <Card key={oil.name} className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col md:flex-row bg-card">
                   <div className="md:w-1/3 lg:w-2/5 relative h-64 md:h-auto">
                     <Image
                       src={oil.imageUrl}
                       alt={oil.alt}
                       fill
-                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 40vw"
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 40vw"
                       className="object-cover"
                       data-ai-hint={oil.imageHint}
                     />
                   </div>
-                  <CardContent className="p-6 md:p-8 lg:p-10 flex flex-col justify-center md:w-2/3 lg:w-3/5">
+                  <CardContent className="p-6 md:p-8 lg:p-10 flex flex-col justify-center md:w-2/3 lg:w-3/5 overflow-y-auto max-h-[300px] md:max-h-none custom-scrollbar pr-2">
                     <h3 className="text-2xl font-semibold text-primary mb-3">{oil.name}</h3>
-                    <p className="text-base text-foreground/80 leading-relaxed mb-4">{oil.description}</p>
-                    <Button variant="outline" size="sm" className="mt-auto self-start border-primary text-primary hover:bg-primary/10">
+                    <p className="text-base text-foreground/80 leading-relaxed mb-4 flex-grow">{oil.description}</p>
+                     <Button variant="outline" size="sm" className="mt-auto self-start border-primary text-primary hover:bg-primary/10">
                       Learn More <ChevronRight className="ml-1 h-4 w-4" />
-                    </Button>
+                     </Button>
                   </CardContent>
                 </Card>
               ))}
-            </Slider>
+            </div>
           </Container>
         </section>
 
@@ -235,8 +196,3 @@ export default function OurScentsPage() {
     </div>
  );
 }
-
-
-    
-
-    
