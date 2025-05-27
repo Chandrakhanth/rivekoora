@@ -14,97 +14,97 @@ body {
 
 @layer base {
   :root {
-    /* Warm Naturals with Earthy Green & Gold Accent Palette */
-    --background: 45 50% 98%; /* Very Light Cream */
-    --foreground: 40 10% 25%; /* Dark Brown-Gray */
+    /* Sage Green, Cream & Gold Accent Palette */
+    --background: 45 30% 97%; /* Cream White */
+    --foreground: 100 15% 25%; /* Dark Sage Green-Gray */
 
-    --muted: 45 30% 94%; /* Light Beige Muted */
-    --muted-foreground: 40 10% 45%; /* Darker Brown-Gray Muted Text */
+    --muted: 90 20% 92%; /* Very Light Sage */
+    --muted-foreground: 100 15% 45%; /* Medium Sage Green-Gray */
 
-    --popover: 45 50% 99%; /* Almost White Cream */
-    --popover-foreground: 40 10% 25%; /* Dark Brown-Gray */
+    --popover: 45 30% 98%; /* Light Cream */
+    --popover-foreground: 100 15% 25%; /* Dark Sage Green-Gray */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 40 10% 25%; /* Dark Brown-Gray */
+    --card-foreground: 100 15% 25%; /* Dark Sage Green-Gray */
 
-    --border: 45 20% 88%; /* Light Beige Border */
-    --input: 45 30% 92%; /* Very Light Beige Input */
+    --border: 90 15% 85%; /* Light Sage Border */
+    --input: 90 25% 94%; /* Very Light Sage Input */
 
-    --primary: 140 35% 40%; /* Muted Forest Green */
-    --primary-foreground: 45 50% 98%; /* Very Light Cream for text on primary */
+    --primary: 100 30% 40%; /* Deep Sage Green */
+    --primary-foreground: 45 30% 97%; /* Cream White for text on primary */
 
-    --secondary: 130 20% 75%; /* Soft Sage Green */
-    --secondary-foreground: 140 35% 25%; /* Darker Green for text on secondary */
+    --secondary: 90 35% 75%; /* Soft Sage Green */
+    --secondary-foreground: 100 30% 25%; /* Darker Sage for text on secondary */
 
-    --accent: 35 70% 55%; /* Muted Gold/Ochre */
-    --accent-foreground: 40 50% 98%; /* Light Cream for text on accent */
+    --accent: 40 70% 60%; /* Muted Gold */
+    --accent-foreground: 50 100% 5%; /* Dark Brown for text on accent */
 
     --destructive: 0 72% 51%; /* Bright Red (kept for standard destructive actions) */
     --destructive-foreground: 0 0% 98%; /* Light Gray for text on destructive */
 
-    --ring: 140 35% 50%; /* Slightly Lighter Forest Green for focus rings */
+    --ring: 100 30% 50%; /* Slightly Lighter Sage Green for focus rings */
     --radius: 0.5rem;
 
-    --chart-1: 140 35% 45%; /* Muted Forest Green variant */
-    --chart-2: 35 65% 50%;  /* Muted Gold/Ochre variant */
-    --chart-3: 45 25% 65%; /* Beige variant */
-    --chart-4: 130 20% 60%; /* Soft Sage Green variant */
-    --chart-5: 40 10% 50%; /* Muted Brown-Gray variant */
+    --chart-1: 100 30% 45%; /* Deep Sage Green variant */
+    --chart-2: 40 65% 55%;  /* Muted Gold variant */
+    --chart-3: 90 20% 70%;  /* Light Sage variant */
+    --chart-4: 45 25% 80%;  /* Cream variant */
+    --chart-5: 100 15% 50%; /* Medium Sage Green-Gray variant */
     
-    --sidebar-background: 45 40% 96%; 
-    --sidebar-foreground: 40 10% 30%;
-    --sidebar-primary: 140 35% 40%;
-    --sidebar-primary-foreground: 45 50% 98%;
-    --sidebar-accent: 45 30% 90%;
-    --sidebar-accent-foreground: 40 10% 25%;
-    --sidebar-border: 45 20% 85%;
-    --sidebar-ring: 140 35% 50%;
+    --sidebar-background: 45 25% 95%; 
+    --sidebar-foreground: 100 15% 30%;
+    --sidebar-primary: 100 30% 40%;
+    --sidebar-primary-foreground: 45 30% 97%;
+    --sidebar-accent: 90 20% 90%;
+    --sidebar-accent-foreground: 100 15% 25%;
+    --sidebar-border: 90 15% 82%;
+    --sidebar-ring: 100 30% 50%;
   }
 
   .dark {
-    --background: 40 10% 12%; /* Very Dark Brown */
-    --foreground: 45 30% 85%; /* Light Beige for text */
+    --background: 100 10% 12%; /* Very Dark Sage Green-Gray */
+    --foreground: 90 20% 85%; /* Light Sage for text */
 
-    --muted: 40 8% 20%; /* Dark Brown Muted */
-    --muted-foreground: 45 25% 65%; /* Beige Muted Text */
+    --muted: 100 8% 20%; /* Dark Sage Muted */
+    --muted-foreground: 90 15% 65%; /* Medium-Light Sage Muted Text */
 
-    --popover: 40 10% 10%; /* Darker Brown Popover */
-    --popover-foreground: 45 30% 85%; /* Light Beige text */
+    --popover: 100 10% 10%; /* Darker Sage Popover */
+    --popover-foreground: 90 20% 85%; /* Light Sage text */
 
-    --card: 40 9% 15%; /* Dark Brown Card */
-    --card-foreground: 45 30% 85%; /* Light Beige text */
+    --card: 100 9% 15%; /* Dark Sage Card */
+    --card-foreground: 90 20% 85%; /* Light Sage text */
 
-    --border: 40 10% 30%; /* Dark Brown Border */
-    --input: 40 10% 32%; /* Dark Brown Input */
+    --border: 100 10% 30%; /* Dark Sage Border */
+    --input: 100 10% 32%; /* Dark Sage Input */
 
-    --primary: 140 30% 50%; /* Lighter Muted Forest Green for dark mode */
-    --primary-foreground: 40 15% 95%; /* Very Light Brown/Almost White for text on primary */
+    --primary: 100 25% 55%; /* Brighter Sage Green for dark mode */
+    --primary-foreground: 45 30% 95%; /* Very Light Cream for text on primary */
 
-    --secondary: 130 18% 40%; /* Muted Sage Green for dark mode */
-    --secondary-foreground: 45 30% 90%; /* Light Beige for text on secondary */
+    --secondary: 90 20% 40%; /* Muted Lighter Sage for dark mode */
+    --secondary-foreground: 90 20% 90%; /* Light Sage for text on secondary */
 
-    --accent: 35 60% 65%; /* Brighter Muted Gold/Ochre for dark mode */
-    --accent-foreground: 35 50% 15%; /* Very Dark Brown for text on accent */
+    --accent: 40 60% 70%; /* Brighter Muted Gold for dark mode */
+    --accent-foreground: 40 50% 10%; /* Very Dark Brown for text on accent */
 
     --destructive: 0 60% 45%; /* Darker Red */
     --destructive-foreground: 0 0% 95%; /* Light Gray for text on destructive */
 
-    --ring: 140 30% 55%; /* Brighter Muted Forest Green for focus rings */
+    --ring: 100 25% 60%; /* Brighter Sage Green for focus rings */
     
-    --chart-1: 140 30% 50%;
-    --chart-2: 35 60% 60%;
-    --chart-3: 45 20% 55%;
-    --chart-4: 130 18% 45%;
-    --chart-5: 40 10% 55%;
+    --chart-1: 100 25% 55%;
+    --chart-2: 40 60% 65%;
+    --chart-3: 90 15% 60%;
+    --chart-4: 45 20% 70%;
+    --chart-5: 100 10% 50%;
 
-    --sidebar-background: 40 10% 10%; 
-    --sidebar-foreground: 45 30% 80%; 
-    --sidebar-primary: 140 30% 50%; 
-    --sidebar-primary-foreground: 40 15% 95%; 
-    --sidebar-accent: 40 8% 22%;
-    --sidebar-accent-foreground: 45 30% 85%;
-    --sidebar-border: 40 10% 25%;
-    --sidebar-ring: 140 30% 55%;
+    --sidebar-background: 100 10% 10%; 
+    --sidebar-foreground: 90 20% 80%; 
+    --sidebar-primary: 100 25% 55%; 
+    --sidebar-primary-foreground: 45 30% 95%; 
+    --sidebar-accent: 100 8% 22%;
+    --sidebar-accent-foreground: 90 20% 85%;
+    --sidebar-border: 100 10% 25%;
+    --sidebar-ring: 100 25% 60%;
   }
 }
 
@@ -114,6 +114,9 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .font-serif {
+    font-family: serif; /* Basic serif fallback */
   }
 }
 
@@ -157,7 +160,7 @@ body {
   overflow: hidden;
   transition-duration: 0.3s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  background-color: #00d757; /* WhatsApp green */
+  background-color: hsl(var(--primary)); /* Use theme color */
 }
 
 .WhatsappFloatingSign {
@@ -173,14 +176,14 @@ body {
 }
 
 .WhatsappFloatingSign svg path {
-  fill: white;
+  fill: hsl(var(--primary-foreground));
 }
 .WhatsappFloatingText {
   position: absolute;
   right: 0%;
   width: 0%;
   opacity: 0;
-  color: white;
+  color: hsl(var(--primary-foreground));
   font-size: 1.2em; /* Equivalent to text-lg */
   font-weight: 600;
   transition-duration: 0.3s;
@@ -249,3 +252,21 @@ body {
   scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted) / 0.5);
 }
 
+/* Essential Oils Slider on Our Scents Page */
+.essential-oil-asymmetric-slider .slick-slide {
+  padding: 0 1rem; /* Spacing for slides if needed */
+}
+.essential-oil-asymmetric-slider .slick-list {
+  margin: 0 -1rem;
+}
+.essential-oil-asymmetric-slider .image-container {
+  overflow: hidden;
+  position: relative;
+}
+.essential-oil-asymmetric-slider .image-container img {
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+.essential-oil-asymmetric-slider .image-container:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.05);
+}
