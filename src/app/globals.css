@@ -252,46 +252,8 @@ body {
   scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted) / 0.5);
 }
 
-/* Essential Oils Section on Our Scents Page (previously .essential-oil-asymmetric-slider) */
-/* Styles for image hover effects if needed globally, or can be component-specific */
-.image-container { /* General image container class if used elsewhere, can be more specific */
-  overflow: hidden;
-  position: relative;
-}
-.image-container img {
-  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
-}
-/*
-  The :hover styles are handled by group-hover in the component:
-  .image-container:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.05);
-  }
-*/
-
-/* Essential Oils Vertical Slider specific styles */
-.essential-oil-asymmetric-slider .slick-slide > div {
-  height: 100%;
-  display: flex; 
-  align-items: stretch; 
-}
-.essential-oil-asymmetric-slider .slick-slide > div > div { /* The card itself */
-  height: 100%;
-  display: flex; 
-  /* Default to column, md:flex-row will override for larger screens within the card component */
-  /* flex-direction: column;  */
-}
-/* If card is md:flex-row, its direct children need to be managed for height */
-.essential-oil-asymmetric-slider .slick-slide > div > div.md\:flex-row {
-  flex-direction: row;
-}
-
-/* Added padding for vertical slides */
-.slick-vertical .slick-slide {
-  padding: 0.5rem 0; /* py-2 equivalent for vertical slides */
-  border: none; /* react-slick sometimes adds borders to vertical slides */
-}
-.slick-vertical .slick-list {
-  padding: 0 !important; /* Override any default padding on vertical lists */
-}
+/* Removed styles specific to the old vertical essential oil slider */
+/* .essential-oil-asymmetric-slider styles removed */
+/* .image-container img hover styles specific to the old essential oil slider context removed if they were here */
+/* .slick-vertical specific styles removed */
     

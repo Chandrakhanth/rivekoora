@@ -1,70 +1,29 @@
 /* Styles for essential oil slider dots if they were enabled */
+/* Keeping this commented as dots are generally disabled based on recent requests */
+/*
 .essential-oil-slider .slick-dots {
   left: 2px;
-  width: auto; /* Adjusted from 200% as it might not be needed or could cause layout issues */
+  width: auto; 
   display: flex !important;
   flex-direction: column;
   justify-content: center;
   transform: translateY(-50%);
   top: 50%;
-  position: absolute; /* Ensure dots are positioned relative to the slider */
+  position: absolute; 
 }
+*/
 
 /* Ensure slides in the essential oil slider have consistent height if using h-full */
+/* This might not be needed if the vertical slider is removed */
+/*
 .essential-oil-slider .slick-slide > div {
   height: 100%;
 }
 .essential-oil-slider .slick-slide > div > div {
   height: 100%;
-  display: flex; /* Ensure card inside takes full height and allows flex properties */
+  display: flex; 
 }
+*/
 
-/* Asymmetrical Slider Styles */
-.essential-oil-asymmetric-slider .slick-slide {
-  /* Adjust padding if you want space around the visible part of the slide */
-  /* padding: 0 10%; */ 
-}
-
-.essential-oil-asymmetric-slider .slick-slide > div {
-  height: 100%;
-}
-.essential-oil-asymmetric-slider .slick-slide > div > div {
-  height: 100%;
-  display: flex;
-  align-items: center; /* Vertically center content in the card */
-}
-
-/* Styles for images within the asymmetric slider */
-.essential-oil-asymmetric-slider .image-wrapper {
-  width: 80%; /* Image fills 80% of its container */
-  height: 80%; /* Image fills 80% of its container */
-  margin: auto; /* Center the image wrapper */
-  overflow: hidden; /* Crucial for zoom effect */
-  position: relative; /* For potential absolute positioning of children */
-}
-
-.essential-oil-asymmetric-slider .image-wrapper img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover ensures the image fills without distortion */
-  transition: transform 0.4s ease-out, filter 0.4s ease-out; /* Smooth zoom and filter */
-}
-
-.essential-oil-asymmetric-slider .slick-slide:hover .image-wrapper img {
-  transform: scale(1.1); /* Zoom in effect */
-  filter: brightness(1.05); /* Slight brightness increase */
-}
-
-/* Specific aspect ratio for "vertical" images (even slides) */
-.essential-oil-asymmetric-slider .slide-even .image-container {
-   /* md:w-2/5 is already set by Tailwind, this is just a comment */
-   /* Forcing aspect ratio on the image container itself */
-}
-
-.essential-oil-asymmetric-slider .slide-even .image-container .image-wrapper {
-  aspect-ratio: 3 / 4; /* 3:4 aspect ratio */
-  width: auto; /* Allow width to adjust based on height and aspect ratio */
-  height: 80%; /* Fill 80% of the available height in its flex item */
-  max-width: 100%; /* Don't exceed parent width */
-}
+/* Removed Asymmetrical Slider Styles as this section is being merged/simplified */
+/* .essential-oil-asymmetric-slider and its child styles are removed */
