@@ -122,12 +122,27 @@ export default function OurScentsPage() {
     arrows: false,
     infinite: true,
     speed: 800,
-    fade: false,
+    fade: false, // Changed from true to false
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+  };
+
+  const essentialOilsSliderSettings = {
+    dots: false,
+    arrows: false,
+    infinite: essentialOilsForSlider.length > 1,
+    speed: 1200,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    fade: false,
   };
 
   return (
@@ -153,13 +168,13 @@ export default function OurScentsPage() {
               {products.map((product, index) => (
                 <div key={index} className="our-scents-slide px-0 md:px-4">
                   <div className="bg-card rounded-xl shadow-2xl overflow-hidden lg:flex lg:min-h-[600px] lg:max-h-[650px]">
-                    <div className="lg:w-1/2 relative h-80 lg:h-auto group overflow-hidden">
+                    <div className="lg:w-1/2 relative h-80 lg:h-auto group overflow-hidden"> {/* Added group and overflow-hidden */}
                       <Image
                         src={product.imageUrl}
                         alt={product.alt}
                         fill
                         sizes="(max-width: 1023px) 100vw, 50vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out" // Added hover effect
                         data-ai-hint={product.imageHint}
                       />
                     </div>
@@ -176,72 +191,71 @@ export default function OurScentsPage() {
           </Container>
         </section>
 
-        <section className="py-16 lg:py-24 bg-muted/30">
+        {/* Essential Oils Collection - Vertical Slider */}
+        <section className="py-16 lg:py-24 bg-muted/30 essential-oil-asymmetric-slider h-[650px] overflow-hidden">
           <Container>
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
                 Our Essential Oils Collection
               </h2>
               <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-foreground/80 sm:text-xl">
-              Immerse yourself in the pure essence of nature with Rive Koora's meticulously sourced essential oils and absolutes. Each selection promises unparalleled quality and aromatic richness.
+              Rive Koora crafts exquisite botanical extracts using only the finest raw materials and advanced extraction technologies. Explore our premium collection below, and don't hesitate to reach out if you need something special - our experts will gladly source or create custom solutions for your unique requirements.
               </p>
             </div>
-
-            <div className="space-y-12 md:space-y-16 lg:space-y-20">
-              {essentialOilsForSlider.map((oil, index) => (
-                <div key={oil.name}>
-                  <Card className={cn(
-                    "overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col md:flex-row bg-card rounded-lg",
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse" // Alternates layout
-                  )}>
-                    <div className={cn(
-                      "md:w-1/2 relative h-80 md:h-[500px] image-container group", // Standardized height for consistency
-                    )}>
-                       <div className="relative w-full h-full overflow-hidden">
-                        <Image
-                          src={oil.imageUrl}
-                          alt={oil.alt}
-                          fill
-                          sizes="(max-width: 767px) 100vw, 50vw"
-                          className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110"
-                          data-ai-hint={oil.imageHint}
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className={cn(
-                      "md:w-1/2 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between", // Use justify-between
-                      index % 2 === 0 ? "items-start text-left" : "items-start md:items-end text-left md:text-right" // Adjust text alignment
-                    )}>
-                      <div> {/* Wrapper for top content */}
-                        <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1">
-                          {oil.name.split(':')[0].split('&')[0].trim()} {/* Keep only primary name */}
-                        </h3>
-                        <p className="text-sm sm:text-base italic text-foreground/70 mb-4">
-                          {oil.botanicalName}
-                        </p>
-                      </div>
-
-                      <div className={cn(
-                        "flex flex-col space-y-2 text-xs sm:text-sm mt-4", // Added mt-4 for spacing
-                         index % 2 === 0 ? "items-start" : "md:items-end"
-                      )}>
-                          <div className="flex items-center bg-accent/20 text-accent-foreground py-1 px-3 rounded-full shadow">
-                            <CalendarDays className="h-4 w-4 mr-2 text-accent" />
-                            <span>Harvest: {oil.harvestSeason}</span>
-                          </div>
-                          <div className="flex items-center bg-accent/20 text-accent-foreground py-1 px-3 rounded-full shadow">
-                            <MapPin className="h-4 w-4 mr-2 text-accent" />
-                            <span>Origin: {oil.origin}</span>
-                          </div>
-                      </div>
-                    </div>
-                  </Card>
-                </div>
-              ))}
-            </div>
           </Container>
+          <Slider {...essentialOilsSliderSettings}>
+            {essentialOilsForSlider.map((oil, index) => (
+              <div key={oil.name} className="px-4 py-2 h-full"> {/* Added py-2 for some vertical spacing & h-full */}
+                <Card className={cn(
+                  "overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col md:flex-row bg-card rounded-lg h-full", // Ensure card takes full height
+                )}>
+                  <div className={cn(
+                    "md:w-2/5 relative image-container group", // Image container takes 2/5 width on md+
+                    index % 2 === 0 ? "md:order-1" : "md:order-2", // Alternates image left/right
+                  )}>
+                    <div className="relative w-full h-64 md:h-full overflow-hidden"> {/* Image wrapper */}
+                      <Image
+                        src={oil.imageUrl}
+                        alt={oil.alt}
+                        fill
+                        sizes="(max-width: 767px) 100vw, 40vw"
+                        className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110" // Added hover-zoom
+                        data-ai-hint={oil.imageHint}
+                      />
+                    </div>
+                  </div>
+                  <div className={cn(
+                    "md:w-3/5 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center", // Text container takes 3/5 width on md+
+                    index % 2 === 0 ? "md:order-2 items-start text-left" : "md:order-1 items-start md:items-end text-left md:text-right" // Alternates text alignment and order
+                  )}>
+                    <div>
+                      <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1">
+                        {oil.name.split(':')[0].split('&')[0].trim()}
+                      </h3>
+                      <p className="text-sm sm:text-base italic text-foreground/70 mb-4">
+                        {oil.botanicalName}
+                      </p>
+                    </div>
+                    <div className={cn(
+                      "flex flex-col space-y-2 text-xs sm:text-sm mt-auto", // Aligns badges to bottom
+                      index % 2 === 0 ? "items-start" : "md:items-end" // Aligns badges left/right based on text alignment
+                    )}>
+                      <div className="flex items-center bg-accent/20 text-accent-foreground py-1 px-3 rounded-full shadow">
+                        <CalendarDays className="h-4 w-4 mr-2 text-accent" />
+                        <span>Harvest: {oil.harvestSeason}</span>
+                      </div>
+                      <div className="flex items-center bg-accent/20 text-accent-foreground py-1 px-3 rounded-full shadow">
+                        <MapPin className="h-4 w-4 mr-2 text-accent" />
+                        <span>Origin: {oil.origin}</span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </Slider>
         </section>
+
 
         <section className="py-12 text-center bg-background border-t border-border/30">
             <Container>

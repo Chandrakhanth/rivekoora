@@ -268,4 +268,30 @@ body {
     filter: brightness(1.05);
   }
 */
+
+/* Essential Oils Vertical Slider specific styles */
+.essential-oil-asymmetric-slider .slick-slide > div {
+  height: 100%;
+  display: flex; 
+  align-items: stretch; 
+}
+.essential-oil-asymmetric-slider .slick-slide > div > div { /* The card itself */
+  height: 100%;
+  display: flex; 
+  /* Default to column, md:flex-row will override for larger screens within the card component */
+  /* flex-direction: column;  */
+}
+/* If card is md:flex-row, its direct children need to be managed for height */
+.essential-oil-asymmetric-slider .slick-slide > div > div.md\:flex-row {
+  flex-direction: row;
+}
+
+/* Added padding for vertical slides */
+.slick-vertical .slick-slide {
+  padding: 0.5rem 0; /* py-2 equivalent for vertical slides */
+  border: none; /* react-slick sometimes adds borders to vertical slides */
+}
+.slick-vertical .slick-list {
+  padding: 0 !important; /* Override any default padding on vertical lists */
+}
     
