@@ -135,13 +135,6 @@ body {
   @apply h-6 w-6 text-primary-foreground;
 }
 
-/* Testimonials slider specific styling */
-.testimonials-slider .slick-slide {
-  padding: 0 0.75rem; /* Add spacing between slides */
-}
-.testimonials-slider .slick-list {
-  margin: 0 -0.75rem; /* Counteract padding for full width appearance */
-}
 
 /* WhatsApp Floating Button Styles */
 .WhatsappFloatingBtn {
@@ -252,8 +245,21 @@ body {
   scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted) / 0.5);
 }
 
-/* Removed styles specific to the old vertical essential oil slider */
-/* .essential-oil-asymmetric-slider styles removed */
-/* .image-container img hover styles specific to the old essential oil slider context removed if they were here */
-/* .slick-vertical specific styles removed */
-    
+/* Vertical slider specific styling */
+.slick-vertical .slick-slide {
+  padding: 0.5rem 0; /* Add some vertical padding between vertical slides */
+}
+
+.essential-oil-asymmetric-slider .slick-list {
+  overflow: hidden; /* Needed for vertical sliders to contain slides properly */
+}
+
+.essential-oil-asymmetric-slider .slick-slide > div {
+  height: 100%; /* Ensure slides take full height of their container */
+}
+
+.essential-oil-asymmetric-slider .slick-slide > div > div {
+  height: 100%; /* Ensure the card itself takes full height */
+  display: flex;
+  flex-direction: column;
+}

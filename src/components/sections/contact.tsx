@@ -147,12 +147,28 @@ export function ContactSection() {
              <h3 className="text-2xl font-semibold text-primary mb-6">Our Contact Details</h3>
              <div className="flex items-start space-x-4 p-4 bg-card rounded-lg shadow-sm">
                 <Mail className="h-8 w-8 text-accent mt-1"/>
-                <div>
-                    <h4 className="font-semibold text-primary">Email Us</h4>
-                    <a href="mailto:poojaprem22@gmail.com" className="text-foreground/80 hover:text-primary">poojaprem22@gmail.com</a>
-                    <p className="text-sm text-muted-foreground">We reply within 24 hours</p>
+                <div className="flex flex-col space-y-2">
+                    <div>
+                        <h4 className="font-semibold text-primary">Contact Us</h4>
+                        <a href="mailto:contactus@rivekoora.com" className="text-foreground/80 hover:text-primary">contactus@rivekoora.com</a>
+
+                    </div>
+                    <div>
+                        <h4 className="font-semibold text-primary">Sales</h4>
+                        <a href="mailto:sales@rivekoora.com" className="text-foreground/80 hover:text-primary">sales@rivekoora.com</a>
+
+                    </div>
+                    <div>
+                        <h4 className="font-semibold text-primary">Founder</h4>
+                        <a href="mailto:poojaprem@rivekoora.com" className="text-foreground/80 hover:text-primary">poojaprem@rivekoora.com</a>
+
+                    </div>
+                    <p className="text-sm text-muted-foreground pt-2">We reply within 24 hours</p>
                 </div>
              </div>
+
+
+
              <div className="flex items-start space-x-4 p-4 bg-card rounded-lg shadow-sm">
                 <Phone className="h-8 w-8 text-accent mt-1"/>
                 <div>
