@@ -113,7 +113,7 @@ export default function OurScentsPage() {
     speed: 400,
     fade: false, 
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
     slidesToShow: 1,
     slidesToScroll: 1,
