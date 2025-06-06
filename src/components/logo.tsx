@@ -6,7 +6,7 @@ export function Logo() {
     <Link href="/" >
     
     <img
-  src="/images/Headerlogo.png" 
+  src="../images/Headerlogo.PNG" 
   alt="Logo"
   width={160} 
   height={75} 
