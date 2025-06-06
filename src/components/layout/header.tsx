@@ -18,7 +18,6 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Our Scents', href: '/our-scents' },
   { label: 'About Us', href: '/#about' },
-  { label: 'Testimonials', href: '/#testimonials' },
   { label: 'Contact', href: '/#contact' },
 ];
 
