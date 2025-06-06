@@ -6,8 +6,8 @@ export function Logo() {
     <Link href="/" >
     
     <img
-  src="/images/logo-1.png" 
-  alt="RIVE KOORA Logo"
+  src="public/images/logo-1.png" 
+  alt="Logo"
   width={160} 
   height={75} 
   style={{
