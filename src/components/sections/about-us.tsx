@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -7,16 +8,16 @@ import Slider from 'react-slick';
 import { cn } from '@/lib/utils';
 
 const sliderImages = [
-  { src: "images/abt-1.jpg", alt: "Serene landscape 1", hint: "landscape" },
-  { src:  "images/abt-2.jpg", alt: "Natural ingredients 1", hint: "ingredients" },
-  { src: "images/abt-3.jpg", alt: "Australian flora", hint: "flora" },
-  { src: "images/abt-4.jpg", alt: "Crafting process", hint: "crafting" },
-  { src:  "images/abt-5.jpg", alt: "Product display", hint: "display" },
-  { src:  "images/abt-6.jpg", alt: "Serene landscape 2", hint: "landscape" },
-  { src:  "images/abt-7.jpg", alt: "Natural ingredients 2", hint: "ingredients" },
-  { src:  "images/abt-8.jpg", alt: "Australian fauna", hint: "fauna" },
-  { src:  "images/abt-9.jpg", alt: "Workshop view", hint: "workshop" },
-  { src:  "images/abt-10.jpg", alt: "Team photo", hint: "team" },
+  { src: "/images/abt-1.jpg", alt: "Serene landscape 1", hint: "landscape" },
+  { src: "/images/abt-2.jpg", alt: "Natural ingredients 1", hint: "ingredients" },
+  { src: "/images/abt-3.jpg", alt: "Australian flora", hint: "flora" },
+  { src: "/images/abt-4.jpg", alt: "Crafting process", hint: "crafting" },
+  { src: "/images/abt-5.jpg", alt: "Product display", hint: "display" },
+  { src: "/images/abt-6.jpg", alt: "Serene landscape 2", hint: "landscape" },
+  { src: "/images/abt-7.jpg", alt: "Natural ingredients 2", hint: "ingredients" },
+  { src: "/images/abt-8.jpg", alt: "Australian fauna", hint: "fauna" },
+  { src: "/images/abt-9.jpg", alt: "Workshop view", hint: "workshop" },
+  { src: "/images/abt-10.jpg", alt: "Team photo", hint: "team" },
 ];
 
 export function AboutUsSection() {
