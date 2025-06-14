@@ -15,7 +15,7 @@ const products = [
   {
     name: 'Jasmine Sambac Absolute & Concrete',
     description: 'Rive Koora presents Jasmine Sambac Absolute Oil—a luxurious, solvent-extracted essence from the finest Jasminum Sambac blossoms, handpicked at dusk in India (March–June) to capture their richest, most intoxicating fragrance. Using premium hexane and ethanol extraction, we preserve the flower’s heady, animalic allure—a symbol of purity and eternal love in Asian traditions. Packaged in a sleek, airtight modern aluminum tin (30ml) to ensure longevity, this oil is ideal for perfumery, aromatherapy, and bespoke formulations. Elevate your creations with the timeless scent of royalty',
-    imageUrl: "/images/PRODUCT-1.png",
+    imageUrl: "images/PRODUCT-1.png",
     imageHint: 'jasmine flower oil',
     alt: 'Jasmine Sambac Absolute Oil in elegant packaging',
     botanicalName: 'Jasminum Sambac',
@@ -25,7 +25,7 @@ const products = [
   {
     name: 'Jasmine Grandiflorum Absolute',
     description: '"Rive Koora introduces Jasmine Grandiflorum Absolute Oil—an exquisite, hexane-extracted essence from delicate Jasminum Grandiflorum blossoms, handpicked at dawn in India (June–August) to preserve their sweet, floral intensity. Ethanol-refined to perfection, this oil captures the vine’s iconic pink-tinged white flowers, revered in haute perfumery for their romantic, honeyed aroma. Housed in a premium airtight aluminum tin (30ml), it ensures potency for luxury fragrances, skincare, and bespoke blends. A dawn-harvested jewel of perfumery—indulge in timeless elegance."',
-    imageUrl: "/images/our-2.png",
+    imageUrl: "images/our-2.png",
     imageHint: 'grandiflorum flower oil',
     alt: 'Vibrant Floral Absolute Liquid - Jasmine Grandiflorum',
     botanicalName: 'Jasminum Grandiflorum',
@@ -35,7 +35,7 @@ const products = [
   {
     name: 'Tuberose Absolute & Concrete',
     description: '"Rive Koora presents Tuberose Absolute & Concrete - luxurious extracts from Indias finest Polianthes tuberosa blossoms, hand-harvested at peak fragrance (April-June). Our hexane-extracted Tuberose Concrete (solid) captures the waxy, intense aroma of Rajanigandha, perfect for perfumery fixatives. The ethanol-refined Tuberose Absolute (liquid) offers a radiant, sweet-floral essence, ideal for high-end fragrances. Both are 100% pure, solvent-free, and sustainably sourced - the concrete in an airtight matte gold aluminum tin to preserve its richness, and the absolute in a UV-protected amber glass bottle to maintain purity. Experience the opulence of Indian tuberose, revered for centuries in royal aromatherapy."',
-    imageUrl: "/images/tubb.png",
+    imageUrl: "images/tubb.png",
     imageHint: 'tuberose flower extract',
     alt: 'Tuberose Absolute & Concrete products',
     botanicalName: 'Polianthes Tuberosa',
@@ -45,7 +45,7 @@ const products = [
   {
     name: 'Red Champaca Absolute & Concrete',
     description: '"Rive Koora presents Red Champaca Absolute & Concrete – exquisite, solvent-free extracts from the rare Michelia champaca blossoms, hand-harvested in India during peak seasons (April-May & Sept-Oct). Our hexane-extracted Champaca Concrete (solid) captures the deep, honeyed richness of Champak, prized as a perfumery treasure. The ethanol-refined Champaca Absolute (liquid) delivers a luminous, floral-spicy essence, famously used in legendary fragrances like Joy by Jean Patou.',
-    imageUrl:  "/images/recam.png",
+    imageUrl:  "images/recam.png",
     imageHint: 'champaca flower extract',
     alt: 'Red Champaca Absolute & Concrete',
     botanicalName: 'Michelia Champaca',
@@ -55,7 +55,7 @@ const products = [
   {
     name: 'Frangipani Absolute & Concrete',
     description: '"Rive Koora presents Frangipani Absolute & Concrete – sun-drenched essences of Plumeria Alba blossoms, hand-gathered from India’s April-May harvest. Our hexane-extracted Frangipani Concrete (solid) preserves the waxy, tropical richness of its petals, while the ethanol-refined Absolute (liquid) distills its iconic floral-citrus bouquet."',
-    imageUrl: "/images/fra.png",
+    imageUrl: "images/fra.png",
     imageHint: 'frangipani flower product',
     alt: 'Frangipani Absolute & Concrete',
     botanicalName: 'Plumeria Alba',
@@ -65,7 +65,7 @@ const products = [
   {
     name: 'Lotus Absolute & Concrete',
     description: '"Rive Koora presents Lotus Absolute & Concrete – sacred essences of Nelumbo nucifera, hand-harvested from Indias monsoon-fed waters (July-Sept). Our hexane-extracted Lotus Concrete (solid) captures the waxy, earthy depth of 1,300-year-old seeds, while the ethanol-refined Absolute (liquid) distills its ethereal floral-spiritual bouquet."',
-    imageUrl: "/images/lou.png",
+    imageUrl: "images/lou.png",
     imageHint: 'lotus flower extract',
     alt: 'Lotus Absolute & Concrete',
     botanicalName: 'Nelumbo Nucifera',
@@ -75,7 +75,7 @@ const products = [
   {
     name: 'Rose Centifolia Absolute & Concrete',
     description: '"Rive Koora presents Rose Centifolia Absolute & Concrete – capturing the legendary fragrance of Grasse in two pristine forms. Our hexane-extracted Rose Concrete (solid) preserves the waxy, honeyed depth of hand-picked Rosa centifolia petals from Indias April-June harvest, while the ethanol-refined Absolute (liquid) distills its crystalline floral sweetness."',
-    imageUrl: "/images/rose.png",
+    imageUrl: "images/rose.png",
     imageHint: 'rose centifolia product',
     alt: 'Rose Centifolia Absolute & Concrete',
     botanicalName: 'Rosa Centifolia',
@@ -85,7 +85,7 @@ const products = [
   {
     name: 'Mimosa Absolute & Concrete',
     description: '"Rive Koora presents Mimosa Absolute & Concrete – golden essences of Mimosa pudica, sustainably harvested from Indias monsoon blooms (June-Sept). Our hexane-extracted Mimosa Concrete (solid) captures the waxy, honeyed richness of its fragrant glomeruli, while the ethanol-refined Absolute (liquid) distills its vibrant floral-balsamic soul."',
-    imageUrl: "/images/mimo.png",
+    imageUrl: "images/mimo.png",
     imageHint: 'mimosa flower extract',
     alt: 'Mimosa Absolute & Concrete',
     botanicalName: 'Mimosa Pudica',
@@ -95,7 +95,7 @@ const products = [
   {
     name: 'Jasmine Auriculatum Absolute & Concrete',
     description: '"Rive Koora unveils Jasmine Auriculatum Absolute & Concrete – rare essences of the elusive Jasminum auriculatum, hand-harvested from India’s March-June blooms. Our hexane-extracted Concrete (solid) preserves the waxy, gardenia-like intensity of its satin-white petals, while the ethanol-refined Absolute (liquid) distills its hypnotic floral-powdery bouquet."',
-    imageUrl: "/images/jas.png",
+    imageUrl: "images/jas.png",
     imageHint: 'auriculatum jasmine product',
     alt: 'Jasmine Auriculatum Absolute & Concrete',
     botanicalName: 'Jasminum Auriculatum',
