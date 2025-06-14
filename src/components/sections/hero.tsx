@@ -11,7 +11,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <video
           // Ensure your video file is at public/images/video.mp4
-          src="/images/video.mp4"
+          src="images/video.mp4"
           className="w-full h-full object-cover"
           autoPlay
           loop
