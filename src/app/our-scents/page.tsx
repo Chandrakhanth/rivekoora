@@ -110,7 +110,7 @@ export default function OurScentsPage() {
     dots: true, // Dots can be true if you want pagination for the main slider
     arrows: false,
     infinite: true,
-    speed: 800,
+    speed: 400,
     fade: false, 
     autoplay: true,
     autoplaySpeed: 4000,
