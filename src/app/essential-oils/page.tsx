@@ -10,7 +10,7 @@ const essentialOils = [
  {
     name: 'DAVANA OIL (Artemisia Pallens)',
  description: '"Distinctive fruity-floral aroma with woody undertonesHigh volatility for superior scent diffusionExcellent fixative properties in perfume formulations"',
- image: 'images/oil-1.png', // Replace with actual image paths
+ image: '/images/oil-1.png', // Replace with actual image paths
     alt: 'Lavender Essential Oil',
     botanicalName: 'Artemisia Pallens',
     origin: 'INDIA',
@@ -18,7 +18,7 @@ const essentialOils = [
  {
     name: 'Lemongrass Essential Oil',
  description: '"Therapeutic Properties:✓ Antibacterial | ✓ Antioxidant | ✓ Anti-inflammatory✓ Analgesic | ✓ Antifungal | ✓ Insect Repellent"',
- image: 'images/oil-2.png', // Replace with actual image paths
+ image: '/images/oil-2.png', // Replace with actual image paths
     alt: 'Peppermint Essential Oil',
     botanicalName: 'Cymbopogon flexuosus / C. citratus / C. pendulus',
     origin: 'INDIA',
@@ -26,7 +26,7 @@ const essentialOils = [
  {
     name: 'Palmrosa Essential Oil',
  description: '"Excellent natural alternative to rose-based ingredients Acts as a natural preservative in formulations GRAS status for food applications"',
- image: 'images/oil-3.png', // Replace with actual image paths
+ image: '/images/oil-3.png', // Replace with actual image paths
     alt: 'Tea Tree Essential Oil',
     botanicalName: 'Cymbopogon martinii var. motia',
     origin: 'INDIA',
@@ -34,7 +34,7 @@ const essentialOils = [
  {
     name: 'Ginger Grass Essential Oil ‘Sofiya’',
  description: 'Natural deodorant|Antimicrobial activity|Skin-conditioning agent|Fragrance fixative',
- image: 'images/oil-4.png', // Replace with actual image paths
+ image: '/images/oil-4.png', // Replace with actual image paths
     alt: 'Eucalyptus Essential Oil',
     botanicalName: 'Cymbopogon martinii var. sofia',
     origin: 'INDIA',
@@ -42,7 +42,7 @@ const essentialOils = [
  {
     name: 'Curry Leaf Essential Oil ',
  description: '"Natural flavor enhancer in culinary productsTraditional Ayurvedic formulationsFunctional fragrance in personal care"',
- image: 'images/oil-5.png', // Replace with actual image paths
+ image: '/images/oil-5.png', // Replace with actual image paths
     alt: 'Lemon Essential Oil',
     botanicalName: 'Murraya koenigii',
     origin: 'INDIA',
@@ -50,7 +50,7 @@ const essentialOils = [
  {
     name: 'Tea Tree Essential Oil',
  description: '"Acne & skin blemish treatmentScalp care for dandruff controlNatural wound disinfectantAromatherapy for respiratory relief"',
- image: 'images/oil-6.png', // Replace with actual image paths
+ image: '/images/oil-6.png', // Replace with actual image paths
     alt: 'Frankincense Essential Oil',
     botanicalName: 'Melaleuca alternifolia',
     origin: 'INDIA',
@@ -58,7 +58,7 @@ const essentialOils = [
   {
     name: 'Geranium Essential Oil',
     description: '"Dermatological Care: Eczema, acne, wound healing Womens Health: Menopausal support, breast engorgementCirculatory System: Edema reduction, bruise treatment Respiratory Relief: Tonsillitis, sore throat"',
-    image: 'images/oil-7.png', // Replace with actual image paths
+    image: '/images/oil-7.png', // Replace with actual image paths
     alt: 'Rosemary Essential Oil',
     botanicalName: 'Pelargonium graveolens',
     origin: 'INDIA',
@@ -66,7 +66,7 @@ const essentialOils = [
   {
     name: 'Basil Essential Oil (Sweet Basil)',
     description: '"Natural flavoring for baked goods & confectionery Condiment enhancement in sauces & dressings Sausage & processed meat seasoning Alcoholic beverage flavoring"',
-    image: 'images/oil-8.png', // Replace with actual image paths
+    image: '/images/oil-8.png', // Replace with actual image paths
     alt: 'Orange Essential Oil',
     botanicalName: 'Ocimum basilicum L',
     origin: 'INDIA',
@@ -74,7 +74,7 @@ const essentialOils = [
   {
     name: 'Vetiver Essential Oil',
     description: '"Base note for luxury fragrances Natural fixative for scent longevity Aromatic modifier in floral compositions Key ingredient in masculine/cologne blends"',
-    image: 'images/oil-9.png', // Replace with actual image paths
+    image: '/images/oil-9.png', // Replace with actual image paths
     alt: 'Chamomile Essential Oil',
     botanicalName: 'Vetiveria zizanioides (Linn) Nash',
     origin: 'INDIA',
@@ -82,7 +82,7 @@ const essentialOils = [
  {
     name: 'Citronella Essential Oil',
  description: '"Natural insect repellent formulations Perfumery (fresh top notes)Aromatherapy blends Household cleaning products"',
- image: 'images/oil-10.png', // Replace with actual image paths
+ image: '/images/oil-10.png', // Replace with actual image paths
     alt: 'Jasmine Essential Oil',
     botanicalName: 'Cymbopogon nardus Rendle',
     origin: 'INDIA',
@@ -90,7 +90,7 @@ const essentialOils = [
   {
     name: 'Cardamom Essential Oil',
  description: '"Flavor Industry: Gourmet food flavoring| Beverage enhancement| Bakery & confectionery /Medicinal Uses: Digestive aid formulations|Respiratory therapeutics|Antimicrobial applications"',
- image: 'images/oil-11.png', // Replace with actual image paths
+ image: '/images/oil-11.png', // Replace with actual image paths
     alt: 'Sandalwood Essential Oil',
     botanicalName: 'Elettaria cardamomum (L.) Maton',
     origin: 'INDIA',
@@ -98,7 +98,7 @@ const essentialOils = [
   {
     name: 'Ginger Essential Oil',
  description: '"Therapeutic Benefits|• Warming agent in aromatherapy• Circulatory stimulant• Digestive support"',
- image: 'images/oil-12.png', // Replace with actual image paths
+ image: '/images/oil-12.png', // Replace with actual image paths
     alt: 'Bergamot Essential Oil',
     botanicalName: 'Zingiber officinale Roscoe',
     origin: 'INDIA',
