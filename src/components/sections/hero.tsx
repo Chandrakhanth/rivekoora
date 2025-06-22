@@ -10,7 +10,6 @@ export function HeroSection() {
     >
       <div className="absolute inset-0 z-0">
         <video
-          // Ensure your video file is at public/images/video.mp4
           src="/images/video.mp4"
           className="w-full h-full object-cover"
           autoPlay
@@ -29,7 +28,7 @@ export function HeroSection() {
         <span className="text-accent text-5xl sm:text-6xl md:text-7xl drop-shadow-lg">RIVE KOORA</span> <br/>Mastery in Botanical Extracts  <br />
                 <span className="text-white font-bold">Embrace Nature&apos;s Essence</span>
         </h1>
-        <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-black font-semibold sm:text-xl">
+        <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-white font-semibold sm:text-xl">
           Discover the pure, natural aromas of Australia with RIVE KOORA, where each scent tells a story of unparalleled quality and natural brilliance. Handcrafted with love to bring tranquility and balance to your life.
         </p>
         <div className="mt-10">
