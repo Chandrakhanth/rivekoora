@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -63,9 +62,9 @@ const products = [
     origin: 'India',
   },
   {
-    name: 'Lotus Absolute & Concrete',
-    description: '"Rive Koora presents Lotus Absolute & Concrete – sacred essences of Nelumbo nucifera, hand-harvested from Indias monsoon-fed waters (July-Sept). Our hexane-extracted Lotus Concrete (solid) captures the waxy, earthy depth of 1,300-year-old seeds, while the ethanol-refined Absolute (liquid) distills its ethereal floral-spiritual bouquet."',
-    imageUrl: "/images/lou.png",
+    name: 'Pink Lotus Absolute & Concrete',
+    Description: '"Rive Koora presents Pink Lotus Absolute & Concrete – sacred essences of Nelumbo nucifera, hand-harvested from Indias monsoon-fed waters (July-Sept). Our hexane-extracted Pink Lotus Concrete (solid) captures the waxy, earthy depth of 1,300-year-old seeds, while the ethanol-refined Absolute (liquid) distills its ethereal floral-spiritual bouquet."',
+    imageUrl: "/images/pinklot.png",
     imageHint: 'lotus flower extract',
     alt: 'Lotus Absolute & Concrete',
     botanicalName: 'Nelumbo Nucifera',
@@ -110,7 +109,7 @@ export default function OurScentsPage() {
     dots: true, // Dots can be true if you want pagination for the main slider
     arrows: false,
     infinite: true,
-    speed: 400,
+    speed: 800,
     fade: false, 
     autoplay: true,
     autoplaySpeed: 4000,
