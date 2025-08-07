@@ -63,7 +63,7 @@ const products = [
   },
   {
     name: 'Pink Lotus Absolute & Concrete',
-    Description: '"Rive Koora presents Pink Lotus Absolute & Concrete – sacred essences of Nelumbo nucifera, hand-harvested from Indias monsoon-fed waters (July-Sept). Our hexane-extracted Pink Lotus Concrete (solid) captures the waxy, earthy depth of 1,300-year-old seeds, while the ethanol-refined Absolute (liquid) distills its ethereal floral-spiritual bouquet."',
+    description:'"Rive Koora presents Pink Lotus Absolute & Concrete – sacred essences of Nelumbo nucifera, hand-harvested from Indias monsoon-fed waters (July-Sept). Our hexane-extracted Pink Lotus Concrete (solid) captures the waxy, earthy depth of 1,300-year-old seeds, while the ethanol-refined Absolute (liquid) distills its ethereal floral-spiritual bouquet."',
     imageUrl: "/images/lotuspink.png",
     imageHint: 'lotus flower extract',
     alt: 'Lotus Absolute & Concrete',
